@@ -10,7 +10,7 @@ const Heading = styled.div`
 `
 
 export default function Head1({
-    txt='default text'
+    txt = 'default text'
 }) {
     return <div>
         <Heading>

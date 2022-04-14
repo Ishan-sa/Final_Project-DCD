@@ -17,6 +17,13 @@ export default function Img({
     </AllImages>
 }
 
+
+
+
+
+
+
+
 // export default function Background({
 //     img = "/Home_bg.svg"
 // })

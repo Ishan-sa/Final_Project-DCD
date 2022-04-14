@@ -48,3 +48,9 @@ a {
     transform: scale(0.9);
   }
 }
+
+.QuizStartBtn {
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+}

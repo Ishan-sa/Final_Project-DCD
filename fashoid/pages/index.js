@@ -5,7 +5,6 @@ import Img from "../comps/image";
 import BodyText from "../comps/text-content";
 import Background from "../comps/background";
 import Button from "../comps/button";
-// import 'semantic-ui-css/semantic.min.css'
 import { useRouter } from 'next/router';
 
 

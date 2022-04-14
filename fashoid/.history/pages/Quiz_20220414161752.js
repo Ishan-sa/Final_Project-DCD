@@ -27,7 +27,9 @@ export default function Quiz() {
             w="380"
             h="420"
         />
-
+      <Heading>
+        
+      </Heading>
 
         <div className="QuizStartBtn">
             <QuizStartBtn onClick={

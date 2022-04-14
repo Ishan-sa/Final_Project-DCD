@@ -1,17 +1,20 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-const GirlThinkingImg = styled.div`
+const AllImages = styled.div`
     display: flex;
     justify-content: center;
+    padding: 20px 0px 20px 0px;
 `
 
 export default function Img({
-    img = "/vercel.svg"
+    img = "/vercel.svg",
+    w = 65,
+    h = 65
 }) {
-    return <GirlThinkingImg>
-        <Image src={img} width={65.61} height={188.01} />
-    </GirlThinkingImg>
+    return <AllImages>
+        <Image src={img} width={w} height={h} />
+    </AllImages>
 }
 
 // export default function Background({

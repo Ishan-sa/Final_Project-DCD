@@ -2,16 +2,19 @@ import styled from "styled-components";
 import Image from "next/image";
 
 const BackgroundImage = styled.div`
-    position: absolute;
+    position: fixed;
     width: 390px;
-    height: 1146px;
+    height: 100vh;
     z-index: -999;
 `
-
+const BGImg = styled.img`
+    width: 390px;
+    height: auto;
+`
 export default function Background({
     img = "/vercel.svg"
 }) {
     return <BackgroundImage>
-        <Image src={"/Home_bg.svg"} width={390} height={1146} />
+        <BGImg src={img} />
     </BackgroundImage>
 }

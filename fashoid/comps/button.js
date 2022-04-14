@@ -1,6 +1,13 @@
-import React from 'react'
-import { Button } from 'semantic-ui-react'
+import styled from "styled-components";
 
-const ButtonExampleButton = () => <Button>Click Here</Button>
+const AllButtons = styled.div`
+    background-color: #fff;
+`
 
-export default ButtonExampleButton
+export default function Button({
+    btn = "This is a button"
+}) {
+    return <AllButtons>
+        <Button></Button>
+    </AllButtons>
+}

@@ -1,14 +1,9 @@
 import styled from "styled-components";
 const Introduction = styled.div`
     color: black;
-    display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // align-content: center;
     width: 336px;
-    height: 180px;
+    padding: 12px 0px 12px 0px;
     text-align: center;
-    z-index: 999;
 `
 
 export default function BodyText({

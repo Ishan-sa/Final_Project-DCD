@@ -14,6 +14,13 @@ export default function Img({
     </GirlThinkingImg>
 }
 
+
+
+
+
+
+
+
 // export default function Background({
 //     img = "/Home_bg.svg"
 // })

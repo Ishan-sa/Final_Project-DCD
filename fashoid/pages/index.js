@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 import Img from "../comps/image";
 import BodyText from "../comps/text-content";
 import Background from "../comps/background";
-import ButtonExampleButton from "../comps/button";
+// import ButtonExampleButton from "../comps/button";
 // import 'semantic-ui-css/semantic.min.css'
 // import { useRouter } from 'next/router';
 

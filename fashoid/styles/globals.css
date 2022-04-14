@@ -15,11 +15,11 @@ a {
   box-sizing: border-box;
 }
 
-.StartBtn {
+/* .StartBtn {
   display: flex;
   justify-content: center;
   padding: 25px 0px 25px 0px;
-}
+} */
 
 /* .StartBtn button:hover {
   -webkit-transform: perspective(1px) translateZ(0);

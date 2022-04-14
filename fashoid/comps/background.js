@@ -3,12 +3,12 @@ import Image from "next/image";
 
 const BackgroundImage = styled.div`
     position: fixed;
-    width: 390px;
+    width: 100vw;
     height: 100vh;
     z-index: -999;
 `
 const BGImg = styled.img`
-    width: 390px;
+    width: 100%;
     height: auto;
 `
 export default function Background({

@@ -1,10 +1,8 @@
 import styled from "styled-components";
 import Head1 from "../comps/heading";
-import styles from "../styles/Home.module.css";
 import Img from "../comps/image";
 import BodyText from "../comps/text-content";
 import Background from "../comps/background";
-import Button from "../comps/button";
 import { useRouter } from 'next/router';
 
 

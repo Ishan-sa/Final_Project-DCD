@@ -4,8 +4,8 @@ import Image from "next/image";
 const AllImages = styled.div`
     display: flex;
     justify-content: center;
-    padding: ${props=>props.p};
-    position: ${props=>props.po};
+    padding: ${props => props.p};
+    position: ${props => props.po};
 `
 
 export default function Img({
@@ -19,14 +19,3 @@ export default function Img({
         <Image src={img} width={w} height={h} />
     </AllImages>
 }
-
-
-
-
-
-
-
-
-// export default function Background({
-//     img = "/Home_bg.svg"
-// })

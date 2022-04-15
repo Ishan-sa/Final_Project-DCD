@@ -16,7 +16,6 @@
 /build
 
 # misc
-.DS_Store
 *.pem
 
 # debug
@@ -30,3 +29,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+.DS_Store
+.DS_Store
+.DS_Store
+.DS_Store

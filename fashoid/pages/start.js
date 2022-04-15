@@ -42,7 +42,10 @@ export default function Start() {
         </FashoidHead>
 
         <FashSubHead>
-            <BodyText txt="Click on the door to proceed" />
+            <BodyText
+                txt="Click on the door to proceed"
+                color="white"
+            />
         </FashSubHead>
 
         <EnterHere>

@@ -4,12 +4,16 @@ const Introduction = styled.div`
     width: 100%;
     padding: 12px 0px 12px 0px;
     text-align: center;
+    color: ${props => props.cl};
 `
 
 export default function BodyText({
-    txt = "lorem ipsum"
+    txt = "lorem ipsum",
+    color = "#333333",
+    display = "flex",
+    jcontent = "center"
 }) {
-    return <Introduction>
+    return <Introduction cl={color}>
         {txt}
     </Introduction>
 }

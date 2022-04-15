@@ -14,6 +14,9 @@ const IncBtn = styled.button`
     border: 0;
     cursor: pointer;
     font-size: 20px;
+    background-image: url("/plus.svg");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
 `
 const DecBtn = styled.button`
     width: 50px;
@@ -24,6 +27,10 @@ const DecBtn = styled.button`
     border: 0;
     cursor: pointer;
     font-size: 24px;
+    background-image: url("/minus.svg");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+
 `
 const AllCounter = styled.div`
     display: flex;
@@ -35,22 +42,27 @@ const AllCounter = styled.div`
     padding-bottom: 200px;
 `
 const CountCont = styled.div`
-    padding: 0px 50px 0px 50px;
+    padding: 8px 50px 8px 50px;
+    font-weight: 400;
+    font-size: 26px;
+    background-color: #BBC5A7;
+    width: auto;
+    height: 50px;
+    margin: 0px 20px 0px 20px;
+    border-radius: 30px;
+    color: white;
 `
 
 const Counter = () => {
     const [count, setCount] = useState(0)
     return (
         <AllCounter>
-            <IncBtn
-                className="styles.button"
-                onClick={() => setCount(count + 1)}
-            >+</IncBtn>
+            <IncBtn onClick={
+                () => setCount(count + 1)}>
+            </IncBtn>
             <CountCont className="styles.count">{count}</CountCont>
-            <DecBtn
-                onClick={() => setCount(count - 1)}
-            >
-                -
+            <DecBtn onClick={
+                () => setCount(count - 1)}>
             </DecBtn>
         </AllCounter>
     )
@@ -80,6 +92,7 @@ const NextBtn = styled.button`
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 24px center;
+    font-family: 'Montserrat', sans-serif;
 `
 
 export default function QtySelect() {
@@ -87,7 +100,7 @@ export default function QtySelect() {
 
     return <All_Cont>
         <Background img="/Home_bg.svg" />
-        <BodyText txt="How many would you like to buy?" />
+        <BodyText txt="How many would you like to buy?" fontsize="20px" />
         <Counter />
         <NextBtn>
             Next

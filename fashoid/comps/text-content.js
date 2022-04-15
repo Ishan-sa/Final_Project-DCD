@@ -5,15 +5,15 @@ const Introduction = styled.div`
     padding: 12px 0px 12px 0px;
     text-align: center;
     color: ${props => props.cl};
+    font-size: ${props => props.sz};
 `
 
 export default function BodyText({
     txt = "lorem ipsum",
     color = "#333333",
-    display = "flex",
-    jcontent = "center"
+    fontsize = "16px",
 }) {
-    return <Introduction cl={color}>
+    return <Introduction cl={color} sz={fontsize}>
         {txt}
     </Introduction>
 }

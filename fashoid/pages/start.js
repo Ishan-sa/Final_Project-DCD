@@ -38,7 +38,7 @@ export default function Start() {
         <Background img="/start_page.svg" />
 
         <FashoidHead>
-            <BodyText txt="Fashoid" />
+            <BodyText txt="Fashoid" fontsize="23px" />
         </FashoidHead>
 
         <FashSubHead>

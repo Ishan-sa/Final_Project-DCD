@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import Img from "../comps/image";
 import BodyText from "../comps/text-content";
 import Background from "../comps/background";
+
 import Button from "../comps/button";
 import { useRouter } from 'next/router';
 
@@ -19,13 +20,21 @@ const StartBtn = styled.button`
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   margin-top: 20px;
+  margin-bottom: 20px;
+`
+
+const MainCont = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
 `
 
 export default function Main() {
 
   const r = useRouter();
 
-  return <div>
+  return <MainCont>
     <Background img="/Home_bg.svg" />
     <Head1 txt="What is Fashoid?" />
     <Img
@@ -34,7 +43,9 @@ export default function Main() {
       h="188.01"
     />
 
-    <BodyText txt="Fashoid is a web app that has the goal of letting its users know how much resources it takes to make a set of clothing such as Jeans and a T-shirt. It also teaches its users the downsides of fast fashion and over-consumption." />
+    <BodyText txt={<>
+      <b>Fashoid</b> is a web app that has the goal of letting its users know how much resources it takes to make a set of clothing such as Jeans and a T-shirt. It also teaches its users the downsides of <b>fast fashion</b> and <b>over-consumption</b>.
+    </>} />
     <BodyText txt="The app will take you through the production process that is common for most fast fashion brands." />
 
     <Img
@@ -66,11 +77,10 @@ export default function Main() {
       w="96.11"
       h="101.76"
     />
-    <div className="StartBtn">
-      <StartBtn onClick={
-        () => r.push("/start")
-      }>Click to enter simulation</StartBtn>
-    </div>
 
-  </div >
+    <StartBtn onClick={
+      () => r.push("/start")
+    }>Click to enter simulation</StartBtn>
+
+  </MainCont >
 }

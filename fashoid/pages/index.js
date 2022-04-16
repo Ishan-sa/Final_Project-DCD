@@ -1,11 +1,8 @@
 import styled from "styled-components";
 import Head1 from "../comps/heading";
-import styles from "../styles/Home.module.css";
 import Img from "../comps/image";
 import BodyText from "../comps/text-content";
 import Background from "../comps/background";
-
-import Button from "../comps/button";
 import { useRouter } from 'next/router';
 
 
@@ -21,6 +18,9 @@ const StartBtn = styled.button`
   font-family: 'Montserrat', sans-serif;
   margin-top: 20px;
   margin-bottom: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 24px center;
 `
 
 const MainCont = styled.div`

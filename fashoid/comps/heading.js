@@ -9,7 +9,6 @@ const Heading = styled.div`
     align-items: center;
     padding-top: 20px;
     position: relative;
-    left: 20px;
 `
 
 export default function Head1({

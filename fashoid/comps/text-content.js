@@ -1,15 +1,19 @@
 import styled from "styled-components";
 const Introduction = styled.div`
-    color: black;
+    color: #333333;
     width: 100%;
     padding: 12px 0px 12px 0px;
     text-align: center;
+    color: ${props => props.cl};
+    font-size: ${props => props.sz};
 `
 
 export default function BodyText({
-    txt = "lorem ipsum"
+    txt = "lorem ipsum",
+    color = "#333333",
+    fontsize = "16px",
 }) {
-    return <Introduction>
+    return <Introduction cl={color} sz={fontsize}>
         {txt}
     </Introduction>
 }

@@ -102,7 +102,8 @@ export default function QtySelect() {
         <Background img="/Home_bg.svg" />
         <BodyText txt="How many would you like to buy?" fontsize="20px" />
         <Counter />
-        <NextBtn>
+        <NextBtn onClick={
+            () => r.push("/WwFact")}>
             Next
         </NextBtn>
     </All_Cont>

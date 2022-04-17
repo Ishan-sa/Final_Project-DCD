@@ -52,6 +52,10 @@ const CountCont = styled.div`
     border-radius: 30px;
     color: white;
 `
+const NextBtnCont = styled.div`
+    display: flex;
+    justify-content: center;
+`
 
 const Counter = () => {
     const [count, setCount] = useState(0)
@@ -80,9 +84,7 @@ const All_Cont = styled.div`
 const NextBtn = styled.button`
     width: 117px;
     height: 40px;
-    display: block;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 30px;
     border: 0;
     border-radius: 8px;
     background-color: #96A96F;
@@ -102,8 +104,10 @@ export default function QtySelect() {
         <Background img="/Home_bg.svg" />
         <BodyText txt="How many would you like to buy?" fontsize="20px" />
         <Counter />
-        <NextBtn>
-            Next
-        </NextBtn>
+        <NextBtnCont>
+            <NextBtn onClick={
+                () => r.push("/")
+            }>Next</NextBtn>
+        </NextBtnCont>
     </All_Cont>
 }

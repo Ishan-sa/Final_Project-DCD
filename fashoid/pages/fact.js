@@ -2,6 +2,7 @@ import Background from "../comps/background";
 import Img from "../comps/image";
 import styled from "styled-components";
 import Button from "../comps/button";
+import BodyText from "../comps/text-content";
 import { useRouter } from 'next/router';
 
 const MainCont = styled.div`
@@ -49,13 +50,14 @@ export default function WwFact(){
     return <MainCont>
     <Background img="/Home_bg.svg" />
     <Water2Jeans>
-        <Img img="/Jean.svg" w="90" h="115"/>
+        <Img img="/Jean.svg" w="90" h="115" p="50px 0px 50px 0px"/>
             =
-        <Img img="/Drop.svg" w="90" h="115"/>
+        <Img img="/Drop.svg" w="90" h="115" p="50px 0px 50px 0px"/>
     </Water2Jeans>
 
     <WaterText>
-    
+      <BodyText txt="1 pair of jeans"/>
+      <BodyText txt="15,000 Litres"/>
     </WaterText>
 
     <StartBtn onClick={

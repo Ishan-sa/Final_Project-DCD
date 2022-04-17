@@ -16,6 +16,6 @@ export default function Img({
     position = "relative"
 }) {
     return <AllImages p={padding} po={position}>
-        <Image src={img} width={w} height={h} />
+        <Image src={img} width={w} height={h} p={padding}/>
     </AllImages>
 }

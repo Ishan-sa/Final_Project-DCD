@@ -4,30 +4,159 @@ import { useRouter } from "next/router";
 import BodyText from "../comps/text-content";
 import Head1 from "../comps/heading";
 import Options from "../comps/Options";
-import { qs } from "../data/que_content";
+import Img from "../comps/image";
 
 
+const OpsButton = styled.button`
+
+    background-color: #4B4B4B;
+    width: 276px;
+    height: 40px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    border: 0;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    margin-block-start: 56px;
+    margin-left: 50px;
+
+`;
+
+const CorrectButton = styled.button`
+
+    background-color: #90ED8E;
+    width: 276px;
+    height: 40px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    border: 0;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    margin-block-start: 56px;
+    margin-left: 50px;
+
+`;
+
+const QuizStartBtn = styled.button`
+  background-color: #19AFF0;
+  width: 276px;
+  height: 40px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  margin-block-start: 100px;
+  margin-left: 50px;
+`;
+
+export default function Question1() {
+
+    const r = useRouter();
+    const { correct } = r.query;
+    const { incorrect } = r.query;
 
 
-export default function Questions() {
+    //Question 1 results
+    if (correct === '') {
+        return <div>
 
-     const r = useRouter();
-     var {qnum} = r.query;
+            <Background img="/Home_bg.svg" />
+            <BodyText txt="How many litres of water would 5 jeans be equivalent to?" fontsize="20px" />
+            <CorrectButton>37,500 Litres</CorrectButton>
+            <OpsButton>54,500 Litres</OpsButton>
+            <OpsButton>64,000 Litres</OpsButton>
+            <QuizStartBtn>Next Question</QuizStartBtn>
+            <Img img="/Person + Bubble.svg"
+                w="200"
+                h="200" />
 
-     if(qnum === undefined){
-        qnum = 0;
-     }
+        </div>
 
+    }
+
+    if (incorrect === '') {
+        return <div>
+
+            <Background img="/Home_bg.svg" />
+            <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
+            <BodyText txt="The correct answer is -" fontsize="10px" />
+            <CorrectButton>37,500 Litres</CorrectButton>
+            <Img img="/Caution Drowning.svg"
+
+                w="100"
+                h="100" />
+
+            <Img img="/Drowning.svg"
+
+                w="900"
+                h="1750" />
+
+
+        </div>
+
+    }
+
+    if (incorrect === '') {
+        return <div>
+
+
+            <Background img="/Home_bg.svg" />
+            <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
+            <BodyText txt="The correct answer is -" fontsize="10px" />
+            <CorrectButton>37,500 Litres</CorrectButton>
+            <Img img="/Caution Drowning.svg"
+
+                w="100"
+                h="100" />
+
+            <Img img="/Drowning.svg"
+
+                w="900"
+                h="1750" />
+
+
+        </div>
+
+    }
+
+
+    // Question 1
     return <div>
         <Background img="/Home_bg.svg" />
+        <BodyText txt="How many litres of water would 5 jeans be equivalent to?" fontsize="20px" />
+        <OpsButton onClick={
+            () => r.replace({
+                pathname: "/Questions",
+                query: {
+                    correct: Number(correct) + 1
+                }
+            })
+        }>37,500 Litres{correct}</OpsButton>
 
-        <Options 
+        <OpsButton onClick={
+            () => r.replace({
+                pathname: "/Questions",
+                query: {
+                    incorrect: Number(incorrect) + 1
+                }
+            })
 
-        q={qs[qnum].title}
-        arr={qs[qnum].ops}
+        }>54,500 Litres</OpsButton>
 
-        />
-    
+        <OpsButton onClick={
+            () => r.replace({
+                pathname: "/Questions",
+                query: {
+                    incorrect: Number(incorrect) + 1
+                }
+            })
+        }>64,000 Litres</OpsButton>
+
+
     </div>
 
 }

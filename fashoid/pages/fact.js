@@ -61,7 +61,7 @@ export default function WwFact(){
     </WaterText>
 
     <StartBtn onClick={
-      () => r.push("/store")
+      () => r.push("/factory")
     }>Make Jeans</StartBtn>
     </MainCont>
 }

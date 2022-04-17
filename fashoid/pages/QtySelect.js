@@ -103,7 +103,7 @@ export default function QtySelect() {
         <BodyText txt="How many would you like to buy?" fontsize="20px" />
         <Counter />
         <NextBtn onClick={
-            () => r.push("/WwFact")}>
+            () => r.push("/fact")}>
             Next
         </NextBtn>
     </All_Cont>

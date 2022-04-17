@@ -2,39 +2,65 @@ import Background from "../comps/background";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import BodyText from "../comps/text-content";
+<<<<<<< HEAD
 import Head1 from "../comps/heading";
+=======
+import Options from "../comps/Options";
+>>>>>>> 307daf0 (test-2)
 import Img from "../comps/image";
 
 
-const OpsButton = styled.button`
+const Question = styled.div`
+    padding-top: 70px;
+`
+const BtnsCont = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: blue;
+    position: relative;
+`
 
+const OpsButton = styled.button`
     background-color: #4B4B4B;
     width: 276px;
     height: 40px;
     border-radius: 20px;
     color: #fff;
+    margin: 25px 0px 25px 0px;
     font-size: 16px;
     border: 0;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
-    margin-block-start: 56px;
-    margin-left: 50px;
-
 `;
 
 const CorrectButton = styled.button`
-
     background-color: #90ED8E;
     width: 276px;
     height: 40px;
     border-radius: 20px;
-    color: #fff;
+    color: #fff:
+    margin: 25px 25px;
     font-size: 16px;
     border: 0;
-    cursor: pointer;
+    cursor: pointer:
     font-family: 'Montserrat', sans-serif;
-    margin-block-start: 56px;
-    margin-left: 50px;
+`
+
+    `;
+
+    const r = useRouter();
+    const { page } = r.query;
+
+    if (page === '') {
+        return <div>
+            <Background img="/Home_bg.svg" />
+            <CorrectButton>37,500 Litres</CorrectButton>
+            <OpsButton>54,500 Litres</OpsButton>
+            <OpsButton>64,000 Litres</OpsButton>
+        </div>
+    }
 
 `;
 
@@ -65,87 +91,87 @@ export default function Question1() {
     const { incorrect3 } = r.query;
 
 
-//Question 3 results
-if (correct3 === '') {
-    return <div>
+    //Question 3 results
+    if (correct3 === '') {
+        return <div>
 
-        <Background img="/Home_bg.svg" />
-        <BodyText txt="How many workers died in the Rana Plaza Collapse?" fontsize="20px" />
-        <OpsButton>843</OpsButton>
-        <OpsButton>512</OpsButton>
-        <CorrectButton>1132</CorrectButton>
-        <QuizStartBtn onClick={
-            () => r.replace({
-                pathname: "/Questions",
-                query: {
-                    q3: Number(q3) + 1
-                }
-            })
-        }>Next{q3}</QuizStartBtn>
-
-
-
-        <Img img="/Person + Bubble.svg"
-            w="200"
-            h="200" />
-
-    </div>
-
-}
-
-if (incorrect3 === '') {
-    return <div>
-
-        <Background img="/Home_bg.svg" />
-        <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
-        <BodyText txt="The correct answer is -" fontsize="10px" />
-        <CorrectButton>1132</CorrectButton>
-
-        <Img img="/Building falling.svg"
-
-            w="900"
-            h="1750" />
-
-        <QuizStartBtn onClick={
-            () => r.replace({
-                pathname: "/Questions",
-                query: {
-                    q3: Number(q3) + 1
-                }
-            })
-        }>Next{q3}</QuizStartBtn>
+            <Background img="/Home_bg.svg" />
+            <BodyText txt="How many workers died in the Rana Plaza Collapse?" fontsize="20px" />
+            <OpsButton>843</OpsButton>
+            <OpsButton>512</OpsButton>
+            <CorrectButton>1132</CorrectButton>
+            <QuizStartBtn onClick={
+                () => r.replace({
+                    pathname: "/Questions",
+                    query: {
+                        q3: Number(q3) + 1
+                    }
+                })
+            }>Next{q3}</QuizStartBtn>
 
 
-    </div>
 
-}
+            <Img img="/Person + Bubble.svg"
+                w="200"
+                h="200" />
 
-if (incorrect3 === '') {
-    return <div>
+        </div>
+
+    }
+
+    if (incorrect3 === '') {
+        return <div>
+
+            <Background img="/Home_bg.svg" />
+            <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
+            <BodyText txt="The correct answer is -" fontsize="10px" />
+            <CorrectButton>1132</CorrectButton>
+
+            <Img img="/Building falling.svg"
+
+                w="900"
+                h="1750" />
+
+            <QuizStartBtn onClick={
+                () => r.replace({
+                    pathname: "/Questions",
+                    query: {
+                        q3: Number(q3) + 1
+                    }
+                })
+            }>Next{q3}</QuizStartBtn>
 
 
-        <Background img="/Home_bg.svg" />
-        <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
-        <BodyText txt="The correct answer is -" fontsize="10px" />
-        <CorrectButton>1132</CorrectButton>
+        </div>
+
+    }
+
+    if (incorrect3 === '') {
+        return <div>
 
 
-        <Img img="/Building falling.svg"
+            <Background img="/Home_bg.svg" />
+            <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
+            <BodyText txt="The correct answer is -" fontsize="10px" />
+            <CorrectButton>1132</CorrectButton>
 
-            w="900"
-            h="1750" />
-        <QuizStartBtn onClick={
-            () => r.replace({
-                pathname: "/Questions",
-                query: {
-                    q3: Number(q3) + 1
-                }
-            })
-        }>Next{q3}</QuizStartBtn>
 
-    </div>
+            <Img img="/Building falling.svg"
 
-}
+                w="900"
+                h="1750" />
+            <QuizStartBtn onClick={
+                () => r.replace({
+                    pathname: "/Questions",
+                    query: {
+                        q3: Number(q3) + 1
+                    }
+                })
+            }>Next{q3}</QuizStartBtn>
+
+        </div>
+
+    }
 
     //Question 3
     if (q3 === '') {
@@ -398,39 +424,28 @@ if (incorrect3 === '') {
 
     }
 
-    
+
     // Question 1
     return <div>
         <Background img="/Home_bg.svg" />
-        <BodyText txt="How many litres of water would 5 jeans be equivalent to?" fontsize="20px" />
-        <OpsButton onClick={
-            () => r.replace({
-                pathname: "/Questions",
-                query: {
-                    correct: Number(correct) + 1
-                }
-            })
-        }>37,500 Litres{correct}</OpsButton>
+        <BtnsCont>
+            <OpsButton onClick={
+                () => r.replace({
+                    pathname: "/Questions",
+                    query: {
+                        page: Number(page + 1)
+                    }
+                })
+            }>37,500 Litres{page}</OpsButton>
 
-        <OpsButton onClick={
-            () => r.replace({
-                pathname: "/Questions",
-                query: {
-                    incorrect: Number(incorrect) + 1
-                }
-            })
+            <OpsButton onClick={
+                () => r.push("/")
+            }>54,500 Litres</OpsButton>
 
-        }>54,500 Litres</OpsButton>
-
-        <OpsButton onClick={
-            () => r.replace({
-                pathname: "/Questions",
-                query: {
-                    incorrect: Number(incorrect) + 1
-                }
-            })
-        }>64,000 Litres</OpsButton>
-
+            <OpsButton onClick={
+                () => r.push("/")
+            }>64,000 Litres</OpsButton>
+        </BtnsCont>
     </div>
 
 }

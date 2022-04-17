@@ -1,16 +1,9 @@
+
 import Background from "../comps/background";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import BodyText from "../comps/text-content";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import Head1 from "../comps/heading";
-=======
-=======
-import Head1 from "../comps/heading";
->>>>>>> 5cea02e (demo)
-import Options from "../comps/Options";
->>>>>>> 307daf0 (test-2)
 import Img from "../comps/image";
 
 
@@ -27,10 +20,14 @@ const OpsButton = styled.button`
     font-family: 'Montserrat', sans-serif;
     margin-block-start: 56px;
     margin-left: 50px;
+    background-image: url("/OuterRing.svg");
+    background-repeat: no-repeat;
+    background-position: left 24px center;
 
 `;
 
 const CorrectButton = styled.button`
+
     background-color: #90ED8E;
     width: 276px;
     height: 40px;
@@ -42,6 +39,10 @@ const CorrectButton = styled.button`
     font-family: 'Montserrat', sans-serif;
     margin-block-start: 56px;
     margin-left: 50px;
+    background-image: url("/selectedOption.svg");
+    background-repeat: no-repeat;
+    background-position: left 24px center;
+
 `;
 
 const QuizStartBtn = styled.button`
@@ -56,15 +57,30 @@ const QuizStartBtn = styled.button`
   font-family: 'Montserrat', sans-serif;
   margin-block-start: 100px;
   margin-left: 50px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 40px center;
 `;
 
-const DrowningCont = styled.div`
-    position: ;
-    // background: blue;
-    // padding-bottom: 1000px;
-`
-
 const TextCont = styled.div`
+    padding-top: 40px;
+`
+const LastNext = styled.button`
+    border-radius: 8px;
+    padding: 10px 40px 10px 40px;
+    background-color: #333333;
+    text-align: left;
+    border: 0;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    cursor: pointer;
+`
+const LastNextCont = styled.div`
+    display: flex;
+    justify-content: center;
     padding-top: 40px;
 `
 
@@ -74,55 +90,45 @@ export default function Question1() {
     const { correct } = r.query;
     const { incorrect } = r.query;
     const { q2 } = r.query;
-<<<<<<< HEAD
     const { correct2 } = r.query;
     const { incorrect2 } = r.query;
     const { q3 } = r.query;
     const { correct3 } = r.query;
     const { incorrect3 } = r.query;
-=======
 
->>>>>>> 5cea02e (demo)
 
-    if (q2 === '') {
-        return <div>
-            <Background img="/Home_bg.svg" />
-            <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
-            <BodyText txt="The correct answer is -" fontsize="10px" />
-            <CorrectButton>37,500 Litres</CorrectButton>
-            <Img img="/Caution Drowning.svg"
-                w="100"
-                h="100" />
-            <Img img="/Drowning.svg"
-                w="900"
-                h="1750" />
-        </div>
 
-    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////Q3
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     //Question 3 results
     if (correct3 === '') {
         return <div>
-
             <Background img="/Home_bg.svg" />
-            <BodyText txt="How many workers died in the Rana Plaza Collapse?" fontsize="20px" />
+            <TextCont>
+                <BodyText txt="Q3- How many workers died in the Rana Plaza Collapse?" fontsize="20px" />
+            </TextCont>
             <OpsButton>843</OpsButton>
             <OpsButton>512</OpsButton>
             <CorrectButton>1132</CorrectButton>
-            <QuizStartBtn onClick={
-                () => r.replace({
-                    pathname: "/Questions",
-                    query: {
-                        q3: Number(q3) + 1
-                    }
-                })
-            }>Next{q3}</QuizStartBtn>
+            <LastNextCont>
+                <LastNext onClick={
+                    () => r.replace({
+                        pathname: "/Questions",
+                        query: {
+                            q3: Number(q3) + 1
+                        }
+                    })
+                }>Next{q3}</LastNext>
+            </LastNextCont>
 
 
 
             <Img img="/Person + Bubble.svg"
-                w="200"
-                h="200" />
+                w="250"
+                h="250" />
 
         </div>
 
@@ -132,25 +138,25 @@ export default function Question1() {
         return <div>
 
             <Background img="/Home_bg.svg" />
-            <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
-            <BodyText txt="The correct answer is -" fontsize="10px" />
+            <TextCont>
+                <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
+            </TextCont>
+            <BodyText txt="The correct answer is -" fontsize="16px" />
             <CorrectButton>1132</CorrectButton>
-
+            <LastNextCont>
+                <LastNext onClick={
+                    () => r.replace({
+                        pathname: "/Questions",
+                        query: {
+                            q3: Number(q3) + 1
+                        }
+                    })
+                }>Next{q3}</LastNext>
+            </LastNextCont>
             <Img img="/Building falling.svg"
 
                 w="900"
                 h="1750" />
-
-            <QuizStartBtn onClick={
-                () => r.replace({
-                    pathname: "/Questions",
-                    query: {
-                        q3: Number(q3) + 1
-                    }
-                })
-            }>Next{q3}</QuizStartBtn>
-
-
         </div>
 
     }
@@ -160,23 +166,27 @@ export default function Question1() {
 
 
             <Background img="/Home_bg.svg" />
-            <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
-            <BodyText txt="The correct answer is -" fontsize="10px" />
+            <TextCont>
+                <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
+            </TextCont>
+            <BodyText txt="The correct answer is -" fontsize="16px" />
             <CorrectButton>1132</CorrectButton>
 
+            <LastNextCont>
+                <LastNext onClick={
+                    () => r.replace({
+                        pathname: "/Questions",
+                        query: {
+                            q3: Number(q3) + 1
+                        }
+                    })
+                }>Next{q3}</LastNext>
+            </LastNextCont>
 
             <Img img="/Building falling.svg"
 
                 w="900"
                 h="1750" />
-            <QuizStartBtn onClick={
-                () => r.replace({
-                    pathname: "/Questions",
-                    query: {
-                        q3: Number(q3) + 1
-                    }
-                })
-            }>Next{q3}</QuizStartBtn>
 
         </div>
 
@@ -187,7 +197,9 @@ export default function Question1() {
         return <div>
 
             <Background img="/Home_bg.svg" />
-            <BodyText txt="How many workers died in the Rana Plaza Collapse? " fontsize="20px" />
+            <TextCont>
+                <BodyText txt="Q3- How many workers died in the Rana Plaza Collapse? " fontsize="20px" />
+            </TextCont>
             <OpsButton onClick={
                 () => r.replace({
                     pathname: "/Questions",
@@ -223,12 +235,22 @@ export default function Question1() {
 
 
 
+
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////Q2
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+
+
     //Question 2 results
     if (correct2 === '') {
         return <div>
 
             <Background img="/Home_bg.svg" />
-            <BodyText txt="How many kg of Carbon Dioxide would 6 shirts be equivalent to?" fontsize="20px" />
+            <TextCont>
+                <BodyText txt="Q2- How many kg of Carbon Dioxide would 6 shirts be equivalent to?" fontsize="20px" />
+            </TextCont>
             <OpsButton>18.2 kg</OpsButton>
             <CorrectButton>15.6 kg</CorrectButton>
             <OpsButton>13 kg</OpsButton>
@@ -244,8 +266,8 @@ export default function Question1() {
 
 
             <Img img="/Person + Bubble.svg"
-                w="200"
-                h="200" />
+                w="250"
+                h="250" />
 
         </div>
 
@@ -255,14 +277,39 @@ export default function Question1() {
         return <div>
 
             <Background img="/Home_bg.svg" />
-            <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
-            <BodyText txt="The correct answer is -" fontsize="10px" />
+            <TextCont>
+                <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
+            </TextCont>
+            <BodyText txt="The correct answer is -" fontsize="16px" />
             <CorrectButton>15.6 kg</CorrectButton>
+            <QuizStartBtn onClick={
+                () => r.replace({
+                    pathname: "/Questions",
+                    query: {
+                        q3: Number(q3) + 1
+                    }
+                })
+            }>Next Question{q3}</QuizStartBtn>
 
             <Img img="/Smoke.svg"
 
                 w="900"
                 h="1750" />
+
+
+
+        </div>
+
+    }
+
+    if (incorrect2 === '') {
+        return <div>
+            <Background img="/Home_bg.svg" />
+            <TextCont>
+                <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
+            </TextCont>
+            <BodyText txt="The correct answer is -" fontsize="16px" />
+            <CorrectButton>15.6 kg</CorrectButton>
 
             <QuizStartBtn onClick={
                 () => r.replace({
@@ -273,33 +320,10 @@ export default function Question1() {
                 })
             }>Next Question{q3}</QuizStartBtn>
 
-
-        </div>
-
-    }
-
-    if (incorrect2 === '') {
-        return <div>
-
-
-            <Background img="/Home_bg.svg" />
-            <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
-            <BodyText txt="The correct answer is -" fontsize="10px" />
-            <CorrectButton>15.6 kg</CorrectButton>
-
-
             <Img img="/Smoke.svg"
 
                 w="900"
                 h="1750" />
-            <QuizStartBtn onClick={
-                () => r.replace({
-                    pathname: "/Questions",
-                    query: {
-                        q3: Number(q3) + 1
-                    }
-                })
-            }>Next Question{q3}</QuizStartBtn>
 
         </div>
 
@@ -310,7 +334,9 @@ export default function Question1() {
         return <div>
 
             <Background img="/Home_bg.svg" />
-            <BodyText txt="How many kg of Carbon Dioxide would 6 shirts be equivalent to?" fontsize="20px" />
+            <TextCont>
+                <BodyText txt="Q2- How many kg of Carbon Dioxide would 6 shirts be equivalent to?" fontsize="20px" />
+            </TextCont>
             <OpsButton onClick={
                 () => r.replace({
                     pathname: "/Questions",
@@ -344,39 +370,37 @@ export default function Question1() {
 
     }
 
+
+
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////Q1
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+
+
     //Question 1 results
     if (correct === '') {
         return <div>
             <Background img="/Home_bg.svg" />
             <TextCont>
-                <BodyText txt="How many litres of water would 5 jeans be equivalent to?" fontsize="20px" />
+                <BodyText txt="Q1- How many litres of water would 5 jeans be equivalent to?" fontsize="20px" />
             </TextCont>
             <CorrectButton>37,500 Litres</CorrectButton>
             <OpsButton>54,500 Litres</OpsButton>
             <OpsButton>64,000 Litres</OpsButton>
-<<<<<<< HEAD
             <QuizStartBtn onClick={
-=======
-
-            <QuizStartBtn OnClick={
->>>>>>> 5cea02e (demo)
                 () => r.replace({
                     pathname: "/Questions",
                     query: {
                         q2: Number(q2) + 1
                     }
                 })
-<<<<<<< HEAD
             }>Next Question{q2}</QuizStartBtn>
 
-
-
-=======
-            }>Next Question</QuizStartBtn>
->>>>>>> 5cea02e (demo)
             <Img img="/Person + Bubble.svg"
-                w="200"
-                h="200" />
+                w="250"
+                h="250" />
         </div>
 
     }
@@ -386,18 +410,9 @@ export default function Question1() {
             <Background img="/Home_bg.svg" />
             <TextCont>
                 <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
-                <BodyText txt="The correct answer is -" fontsize="16px" />
             </TextCont>
+            <BodyText txt="The correct answer is -" fontsize="16px" />
             <CorrectButton>37,500 Litres</CorrectButton>
-            <Img img="/Caution Drowning.svg"
-                w="100"
-                h="100" />
-<<<<<<< HEAD
-
-            <Img img="/Drowning.svg"
-
-                w="900"
-                h="1750" />
 
             <QuizStartBtn onClick={
                 () => r.replace({
@@ -407,15 +422,18 @@ export default function Question1() {
                     }
                 })
             }>Next Question{q2}</QuizStartBtn>
+            <Img img="/Caution Drowning.svg"
+
+                w="100"
+                h="100" />
+
+            <Img img="/Drowning.svg"
+
+                w="900"
+                h="1750" />
 
 
-=======
-            <DrowningCont>
-                <Img img="/Drowning.svg"
-                    w="1900"
-                    h="4410" />
-            </DrowningCont>
->>>>>>> 5cea02e (demo)
+
         </div>
 
     }
@@ -423,16 +441,11 @@ export default function Question1() {
     if (incorrect === '') {
         return <div>
             <Background img="/Home_bg.svg" />
-            <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
-            <BodyText txt="The correct answer is -" fontsize="10px" />
+            <TextCont>
+                <BodyText txt="Ah! You got it wrong :(" fontsize="20px" />
+            </TextCont>
+            <BodyText txt="The correct answer is -" fontsize="16px" />
             <CorrectButton>37,500 Litres</CorrectButton>
-            <Img img="/Caution Drowning.svg"
-                w="100"
-                h="100" />
-            <Img img="/Drowning.svg"
-                w="900"
-                h="1750" />
-<<<<<<< HEAD
             <QuizStartBtn onClick={
                 () => r.replace({
                     pathname: "/Questions",
@@ -441,9 +454,16 @@ export default function Question1() {
                     }
                 })
             }>Next Question{q2}</QuizStartBtn>
+            <Img img="/Caution Drowning.svg"
 
-=======
->>>>>>> 5cea02e (demo)
+                w="100"
+                h="100" />
+
+            <Img img="/Drowning.svg"
+
+                w="900"
+                h="1750" />
+
         </div>
 
     }
@@ -453,7 +473,7 @@ export default function Question1() {
     return <div>
         <Background img="/Home_bg.svg" />
         <TextCont>
-            <BodyText txt="How many litres of water would 5 jeans be equivalent to?" fontsize="20px" />
+            <BodyText fontsize="20px" txt="Q1- How many litres of water would 5 jeans be equivalent to?" />
         </TextCont>
         <OpsButton onClick={
             () => r.replace({
@@ -483,8 +503,6 @@ export default function Question1() {
             })
         }>64,000 Litres</OpsButton>
 
-
     </div>
-
 
 }

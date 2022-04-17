@@ -29,6 +29,7 @@ const Cursor = styled.div`
     position: absolute;
     left: 73.85%;
     top: 51.8%;
+    cursor: pointer;
 `
 
 export default function Start() {

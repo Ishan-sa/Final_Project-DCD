@@ -106,7 +106,7 @@ export default function QtySelect() {
         <Counter />
         <NextBtnCont>
             <NextBtn onClick={
-                () => r.push("/")
+                () => r.push("/fact")
             }>Next</NextBtn>
         </NextBtnCont>
     </All_Cont>

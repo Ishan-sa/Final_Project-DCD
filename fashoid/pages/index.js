@@ -79,7 +79,7 @@ export default function Main() {
     />
 
     <StartBtn onClick={
-      () => r.push("/start")
+      () => r.push("/store")
     }>Click to enter simulation</StartBtn>
 
   </MainCont >

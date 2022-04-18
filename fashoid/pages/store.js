@@ -46,7 +46,7 @@ export default function Store() {
             </Clothing>
         </Cabinet>
     <Shirts onClick={
-                () => r.push("/QtySelect")
+                () => r.push("/QtySelectShirts")
             }>
         <Img img="/topsrack.svg" w="342" h="189" />
     </Shirts>

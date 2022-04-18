@@ -106,14 +106,8 @@ export default function QtySelect() {
         <Counter />
         <NextBtnCont>
             <NextBtn onClick={
-                () => r.push("/fact")
+                () => r.push("/fact2")
             }>Next</NextBtn>
         </NextBtnCont>
     </All_Cont>
 }
-
-// var count = 1;
-
-// if (count === 1){
-//     console.log("working")
-// }

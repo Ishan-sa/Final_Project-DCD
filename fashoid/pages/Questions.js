@@ -69,7 +69,6 @@ const LastNext = styled.button`
     border-radius: 8px;
     padding: 10px 40px 10px 40px;
     background-color: #333333;
-    text-align: left;
     border: 0;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -116,7 +115,7 @@ export default function Question1() {
             <LastNextCont>
                 <LastNext onClick={
                     () => r.replace({
-                        pathname: "/Questions",
+                        pathname: "/learnmore",
                         query: {
                             q3: Number(q3) + 1
                         }
@@ -146,7 +145,7 @@ export default function Question1() {
             <LastNextCont>
                 <LastNext onClick={
                     () => r.replace({
-                        pathname: "/Questions",
+                        pathname: "/learnmore",
                         query: {
                             q3: Number(q3) + 1
                         }
@@ -175,7 +174,7 @@ export default function Question1() {
             <LastNextCont>
                 <LastNext onClick={
                     () => r.replace({
-                        pathname: "/Questions",
+                        pathname: "/learnmore",
                         query: {
                             q3: Number(q3) + 1
                         }

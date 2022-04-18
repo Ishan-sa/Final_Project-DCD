@@ -12,6 +12,7 @@ const Clothing = styled.div`
     position: absolute;
     top: 55px; 
     left: 35px;
+    cursor: pointer;
 `;
 
 const MainCont = styled.div`
@@ -20,6 +21,10 @@ const MainCont = styled.div`
   align-items: center;
   width: 100vw;
 `
+
+const Shirts = styled.div`
+    cursor: pointer;
+`;
 
 export default function Store() {
     const r = useRouter();
@@ -40,7 +45,10 @@ export default function Store() {
                 <Img img="/jeans3.svg" w="213.67" h="179.41" po="absolute" />
             </Clothing>
         </Cabinet>
-
+    <Shirts onClick={
+                () => r.push("/QtySelectShirts")
+            }>
         <Img img="/topsrack.svg" w="342" h="189" />
+    </Shirts>
     </MainCont>
 }

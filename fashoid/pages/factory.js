@@ -32,13 +32,23 @@ const FactBackgroundDiv = styled.div`
 const Warehouse = styled.img`
     margin-top: 210px;
     width: 200px;
+    cursor: pointer;
 `;
 
 const Warehouse2 = styled.img`
     margin-top: 261px;
     width: 250px;
     height: 250px;
+    cursor: pointer;
 `;
+
+
+const Warehouse3 = styled.img`
+    margin-top: 261px;
+    width: 250px;
+    height: 250px;
+`;
+
 
 const NextBtn = styled.button`
   background-color: #CFEDFF;

@@ -1,7 +1,6 @@
 import Background from "../comps/background";
 import Img from "../comps/image";
 import styled from "styled-components";
-import Button from "../comps/button";
 import BodyText from "../comps/text-content";
 import { useRouter } from 'next/router';
 
@@ -52,18 +51,27 @@ export default function WwFact(){
     return <MainCont>
     <Background img="/Home_bg.svg" />
     <Water2Jeans>
-        <Img img="/Jean.svg" w="90" h="115" p="50px 0px 50px 0px"/>
+        <Img img="/tshirt.svg" w="90" h="115" p="50px 0px 50px 0px"/>
             =
         <Img img="/Drop.svg" w="90" h="115" p="50px 0px 50px 0px"/>
     </Water2Jeans>
 
     <WaterText>
-      <BodyText txt="1 pair of jeans"/>
-      <BodyText txt="15,000 Litres"/>
+      <BodyText txt="1 t-shirt"/>
+      <BodyText txt="7000 Litres"/>
     </WaterText>
+
+    <WaterText>
+      <BodyText txt="5.2 kg of CO2"/>
+      =
+      <Img img="/carco2.svg" w="130" h="90" p="50px 0px 50px 0px"/>
+    </WaterText>
+
+    <BodyText txt="Equivalent to driving 42km in a standard vehicle"/>
+
 
     <StartBtn onClick={
       () => r.push("/factory")
-    }>Make Jeans</StartBtn>
+    }>Make T-shirt</StartBtn>
     </MainCont>
 }

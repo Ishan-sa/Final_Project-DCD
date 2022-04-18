@@ -1,3 +1,4 @@
+import Background2 from "../comps/background";
 import Background from "../comps/background";
 import Img from "../comps/image";
 import styled from "styled-components";
@@ -11,16 +12,48 @@ const MainCont = styled.div`
     width: 100vw;
 `;
 
+const FactBackground = styled.img`
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+`;
+
+const FactBackgroundDiv = styled.div`
+    z-index: -999;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -999;
+`;
+
 const Warehouse = styled.img`
-    margin-top: 100px;
+    margin-top: 210px;
     width: 200px;
 `;
 
 const Warehouse2 = styled.img`
-    margin-top: 100px;
+    margin-top: 261px;
     width: 250px;
     height: 250px;
 `;
+
+const NextBtn = styled.button`
+  background-color: #CFEDFF;
+  width: 80px;
+  height: 40px;
+  border-radius: 8px;
+  color: #000000;
+  font-size: 16px;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-position: right 24px center;
+`
 
 export default function Factory() {
 
@@ -29,7 +62,9 @@ export default function Factory() {
 
     if (page === "1") {
         return <MainCont>
-            <Background img="/factory_bg.svg"></Background>
+        <FactBackgroundDiv>
+            <FactBackground src="/factory_bg.svg"></FactBackground>
+        </FactBackgroundDiv>
             <BodyText txt="Oh no......."></BodyText>
             <Warehouse src="/factory2.svg" onClick={
                 () => r.replace({
@@ -44,7 +79,9 @@ export default function Factory() {
 
     if (page === "2") {
         return <MainCont>
-            <Background img="/factory_bg.svg"></Background>
+        <FactBackgroundDiv>
+            <FactBackground src="/factory_bg.svg"></FactBackground>
+        </FactBackgroundDiv>
             <BodyText txt="It’s going down!!!!!!"></BodyText>
             <Warehouse src="/factory3.svg" onClick={
                 () => r.replace({
@@ -59,7 +96,9 @@ export default function Factory() {
 
     if (page === "3") {
         return <MainCont>
-            <Background img="/factory_bg.svg"></Background>
+         <FactBackgroundDiv>
+            <FactBackground src="/factory_bg.svg"></FactBackground>
+        </FactBackgroundDiv>
             <BodyText txt="BOOM!!!"></BodyText>
             <Warehouse2 src="/factory4.svg" onClick={
                 () => r.replace({
@@ -76,20 +115,24 @@ export default function Factory() {
 
     if (page === "4") {
         return <MainCont>
-            <Background img="/factory_bg.svg"></Background>
-            <BodyText txt="The Rana Plaza factory produced clothes for many fast fashion companies."></BodyText>
-            <BodyText txt="The building collapsed in 2011 from poor building structure and unsafe working conditions and killed 1,132 people."></BodyText>
+        <FactBackgroundDiv>
+            <FactBackground src="/factory_bg.svg"></FactBackground>
+        </FactBackgroundDiv>
+            <BodyText txt={<>The <b>Rana Plaza</b> factory produced clothes for many fast fashion companies.</>}></BodyText>
+            <BodyText txt={<>The building collapsed in <b>2011</b> from poor building structure and unsafe working conditions and killed <b>1,132 people.</b></>}></BodyText>
             <Warehouse2 src="/factory5.svg"/>
-                 <button onClick={
-                     () => r.push("/Quiz")
-                 }>Next</button>
+            <NextBtn onClick={
+                () => r.push("/Quiz")
+            }>Next</NextBtn>
         </MainCont>
     }
 
     // first state of the building before clicking
 
     return <MainCont>
-        <Background img="/factory_bg.svg"></Background>
+        <FactBackgroundDiv>
+            <FactBackground src="/factory_bg.svg"></FactBackground>
+        </FactBackgroundDiv>
         <BodyText txt="Keep Clicking on the building to make your product."></BodyText>
         <Warehouse src="/Factory.svg" onClick={
                 () => r.replace({

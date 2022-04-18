@@ -31,13 +31,23 @@ const FactBackgroundDiv = styled.div`
 const Warehouse = styled.img`
     margin-top: 210px;
     width: 200px;
+    cursor: pointer;
 `;
 
 const Warehouse2 = styled.img`
     margin-top: 261px;
     width: 250px;
     height: 250px;
+    cursor: pointer;
 `;
+
+
+const Warehouse3 = styled.img`
+    margin-top: 261px;
+    width: 250px;
+    height: 250px;
+`;
+
 
 const NextBtn = styled.button`
   background-color: #CFEDFF;
@@ -120,7 +130,7 @@ export default function Factory() {
         </FactBackgroundDiv>
             <BodyText txt={<>The <b>Rana Plaza</b> factory produced clothes for many fast fashion companies.</>}></BodyText>
             <BodyText txt={<>The building collapsed in <b>2011</b> from poor building structure and unsafe working conditions and killed <b>1,132 people.</b></>}></BodyText>
-            <Warehouse2 src="/factory5.svg"/>
+            <Warehouse3 src="/factory5.svg"/>
             <NextBtn onClick={
                 () => r.push("/Quiz")
             }>Next</NextBtn>

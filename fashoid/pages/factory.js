@@ -10,6 +10,7 @@ const MainCont = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100vw;
+    height: 100vh;
 `;
 
 const FactBackground = styled.img`
@@ -41,7 +42,7 @@ const Warehouse2 = styled.img`
 
 const NextBtn = styled.button`
   background-color: #CFEDFF;
-  width: 80px;
+  width: 100px;
   height: 40px;
   border-radius: 8px;
   color: #000000;
@@ -53,6 +54,13 @@ const NextBtn = styled.button`
   margin-bottom: 20px;
   background-repeat: no-repeat;
   background-position: right 24px center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23333'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+`
+
+const SubCont = styled.div`
+    padding-top: 40px;
 `
 
 export default function Factory() {
@@ -62,27 +70,32 @@ export default function Factory() {
 
     if (page === "1") {
         return <MainCont>
-        <FactBackgroundDiv>
-            <FactBackground src="/factory_bg.svg"></FactBackground>
-        </FactBackgroundDiv>
-            <BodyText txt="Oh no......."></BodyText>
-            <Warehouse src="/factory2.svg" onClick={
-                () => r.replace({
-                    pathname: "/factory",
-                    query: {
-                        page: page === undefined ? 1 : Number(page) + 1,
-                    }
-                })
-            } />
+            <FactBackgroundDiv>
+                <FactBackground src="/factory_bg.svg"></FactBackground>
+            </FactBackgroundDiv>
+            <SubCont>
+                <BodyText txt="Oh no......." />
+                <Warehouse src="/factory2.svg" onClick={
+                    () => r.replace({
+                        pathname: "/factory",
+                        query: {
+                            page: page === undefined ? 1 : Number(page) + 1,
+                        }
+                    })
+                } />
+            </SubCont>
+
         </MainCont>
     }
 
     if (page === "2") {
         return <MainCont>
-        <FactBackgroundDiv>
-            <FactBackground src="/factory_bg.svg"></FactBackground>
-        </FactBackgroundDiv>
-            <BodyText txt="It’s going down!!!!!!"></BodyText>
+            <FactBackgroundDiv>
+                <FactBackground src="/factory_bg.svg"></FactBackground>
+            </FactBackgroundDiv>
+            <SubCont>
+                <BodyText txt="It’s going down!!!!!!"></BodyText>
+            </SubCont>
             <Warehouse src="/factory3.svg" onClick={
                 () => r.replace({
                     pathname: "/factory",
@@ -96,10 +109,12 @@ export default function Factory() {
 
     if (page === "3") {
         return <MainCont>
-         <FactBackgroundDiv>
-            <FactBackground src="/factory_bg.svg"></FactBackground>
-        </FactBackgroundDiv>
-            <BodyText txt="BOOM!!!"></BodyText>
+            <FactBackgroundDiv>
+                <FactBackground src="/factory_bg.svg"></FactBackground>
+            </FactBackgroundDiv>
+            <SubCont>
+                <BodyText txt="BOOM!!!"></BodyText>
+            </SubCont>
             <Warehouse2 src="/factory4.svg" onClick={
                 () => r.replace({
                     pathname: "/factory",
@@ -115,12 +130,14 @@ export default function Factory() {
 
     if (page === "4") {
         return <MainCont>
-        <FactBackgroundDiv>
-            <FactBackground src="/factory_bg.svg"></FactBackground>
-        </FactBackgroundDiv>
-            <BodyText txt={<>The <b>Rana Plaza</b> factory produced clothes for many fast fashion companies.</>}></BodyText>
-            <BodyText txt={<>The building collapsed in <b>2011</b> from poor building structure and unsafe working conditions and killed <b>1,132 people.</b></>}></BodyText>
-            <Warehouse2 src="/factory5.svg"/>
+            <FactBackgroundDiv>
+                <FactBackground src="/factory_bg.svg"></FactBackground>
+            </FactBackgroundDiv>
+            <SubCont>
+                <BodyText txt={<>The <b>Rana Plaza</b> factory produced clothes for many fast fashion companies.</>}></BodyText>
+                <BodyText txt={<>The building collapsed in <b>2011</b> from poor building structure and unsafe working conditions and killed <b>1,132 people.</b></>}></BodyText>
+            </SubCont>
+            <Warehouse2 src="/factory5.svg" />
             <NextBtn onClick={
                 () => r.push("/Quiz")
             }>Next</NextBtn>
@@ -133,14 +150,16 @@ export default function Factory() {
         <FactBackgroundDiv>
             <FactBackground src="/factory_bg.svg"></FactBackground>
         </FactBackgroundDiv>
-        <BodyText txt="Keep Clicking on the building to make your product."></BodyText>
+        <SubCont>
+            <BodyText txt="Keep Clicking on the building to make your product."></BodyText>
+        </SubCont>
         <Warehouse src="/Factory.svg" onClick={
-                () => r.replace({
-                    pathname: "/factory",
-                    query: {
-                        page: page === undefined ? 1 : Number(page) + 1,
-                    }
-                })
-            } />
+            () => r.replace({
+                pathname: "/factory",
+                query: {
+                    page: page === undefined ? 1 : Number(page) + 1,
+                }
+            })
+        } />
     </MainCont>
 }

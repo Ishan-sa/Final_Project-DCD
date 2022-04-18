@@ -48,6 +48,7 @@ const StartBtn = styled.button`
 export default function WwFact(){
 
     const r = useRouter();
+    const count = useState();
 
     return <MainCont>
     <Background img="/Home_bg.svg" />
@@ -58,9 +59,11 @@ export default function WwFact(){
     </Water2Jeans>
 
     <WaterText>
-      <BodyText txt="1 pair of jeans"/>
+      {/* <BodyText txt={{count} pair of jeans)}/> */}
+      <div>{count}</div>
       <BodyText txt="15,000 Litres"/>
     </WaterText>
+
 
     <StartBtn onClick={
       () => r.push("/factory")

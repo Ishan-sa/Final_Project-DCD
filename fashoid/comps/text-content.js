@@ -6,14 +6,18 @@ const Introduction = styled.div`
     text-align: center;
     color: ${props => props.cl};
     font-size: ${props => props.sz};
+    padding: ${props => props.pd};
+    margin: ${props => props.mg};
 `
 
 export default function BodyText({
     txt = "lorem ipsum",
     color = "#333333",
     fontsize = "16px",
+    padding = "0px 0px 0px 0px",
+    margin = "0px 0px 0px 0px"
 }) {
-    return <Introduction cl={color} sz={fontsize}>
+    return <Introduction cl={color} sz={fontsize} pd={padding} mg={margin}>
         {txt}
     </Introduction>
 }

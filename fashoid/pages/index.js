@@ -43,7 +43,7 @@ export default function Main() {
       h="188.01"
     />
 
-    <BodyText txt={<>
+    <BodyText padding="0px 15px 0px 15px" txt={<>
       <b>Fashoid</b> is a web app that has the goal of letting its users know how much resources it takes to make a set of clothing such as Jeans and a T-shirt. It also teaches its users the downsides of <b>fast fashion</b> and <b>over-consumption</b>.
     </>} />
     <BodyText txt="The app will take you through the production process that is common for most fast fashion brands." />

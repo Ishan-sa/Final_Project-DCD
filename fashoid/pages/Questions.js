@@ -422,17 +422,12 @@ export default function Question1() {
                 })
             }>Next Question{q2}</QuizStartBtn>
             <Img img="/Caution Drowning.svg"
-
                 w="100"
                 h="100" />
 
             <Img img="/Drowning.svg"
-
                 w="900"
                 h="1750" />
-
-
-
         </div>
 
     }

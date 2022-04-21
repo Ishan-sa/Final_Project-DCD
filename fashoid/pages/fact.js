@@ -17,16 +17,18 @@ const MainCont = styled.div`
 const Water2Jeans = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  // padding: 0px 10px 10px 0px;
+  justify-content: space-around;
+  width: 90%;
+  padding-top: 150px;
   margin-top: 80px;
 `
 
 const WaterText = styled.div`
   display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // padding: 0px 0px 10px 0px;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 20px;
 `
 
 const StartBtn = styled.button`
@@ -47,6 +49,10 @@ const StartBtn = styled.button`
   margin-top: 30px;
 `
 
+const H2 = styled.h2`
+  text-align: center;
+`
+
 
 export default function WwFact() {
 
@@ -57,13 +63,15 @@ export default function WwFact() {
     return <MainCont>
       <Background img="/Home_bg.svg" />
       <Water2Jeans>
-        <Img img="/Jean.svg" w="70" h="115" p="50px 0px 50px 0px" />
-        <BodyText txt="="></BodyText>
-        <Img img="/Drop.svg" w="70" h="115" p="50px 0px 50px 0px" />
+        <Img img="/Jean.svg" w="65" h="115" p="50px 0px 50px 0px" />
+        <Img img="/equals.svg" w="20" />
+        <Img img="/Drop.svg" w="65" h="115" p="50px 0px 50px 0px" />
       </Water2Jeans>
 
       <WaterText>
-        <div>{gq} pair of jeans</div>
+        <BodyText padding="0px 0px 0px 12px" txt={<>
+          {gq} pair of jeans
+        </>} />
         <BodyText txt="7,500 Litres" />
       </WaterText>
 
@@ -78,13 +86,15 @@ export default function WwFact() {
     return <MainCont>
       <Background img="/Home_bg.svg" />
       <Water2Jeans>
-        <Img img="/Jean.svg" w="80" h="115" />
-        <BodyText txt="="></BodyText>
-        <Img img="/Drop.svg" w="80" h="115" />
+        <Img img="/Jean.svg" w="65" h="115" p="50px 0px 50px 0px" />
+        <Img img="/equals.svg" w="20" />
+        <Img img="/Drop.svg" w="65" h="115" p="50px 0px 50px 0px" />
       </Water2Jeans>
 
       <WaterText>
-        <div>{gq} pair of jeans</div>
+        <BodyText padding="0px 0px 0px 12px" txt={<>
+          {gq} pair of jeans
+        </>} />
         <BodyText txt="15,000 Litres" />
       </WaterText>
 
@@ -99,13 +109,15 @@ export default function WwFact() {
     return <MainCont>
       <Background img="/Home_bg.svg" />
       <Water2Jeans>
-        <Img img="/Jean.svg" w="70" h="115" p="50px 0px 50px 0px" />
-        =
-        <Img img="/Drop.svg" w="70" h="115" p="50px 0px 50px 0px" />
+        <Img img="/Jean.svg" w="65" h="115" p="50px 0px 50px 0px" />
+        <Img img="/equals.svg" w="20" />
+        <Img img="/Drop.svg" w="65" h="115" p="50px 0px 50px 0px" />
       </Water2Jeans>
 
       <WaterText>
-        <div>{gq} pair of jeans</div>
+        <BodyText padding="0px 0px 0px 12px" txt={<>
+          {gq} pair of jeans
+        </>} />
         <BodyText txt="22,500 Litres" />
       </WaterText>
 
@@ -120,13 +132,15 @@ export default function WwFact() {
     return <MainCont>
       <Background img="/Home_bg.svg" />
       <Water2Jeans>
-        <Img img="/Jean.svg" w="90" h="115" p="50px 0px 50px 0px" />
-        =
-        <Img img="/Drop.svg" w="90" h="115" p="50px 0px 50px 0px" />
+        <Img img="/Jean.svg" w="65" h="115" p="50px 0px 50px 0px" />
+        <Img img="/equals.svg" w="20" />
+        <Img img="/Drop.svg" w="65" h="115" p="50px 0px 50px 0px" />
       </Water2Jeans>
 
       <WaterText>
-        <div>{gq} pair of jeans</div>
+        <BodyText padding="0px 0px 0px 12px" txt={<>
+          {gq} pair of jeans
+        </>} />
         <BodyText txt="30,000 Litres" />
       </WaterText>
 
@@ -142,10 +156,8 @@ export default function WwFact() {
   if (gq > 4) {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <Water2Jeans>
-        <Img img="/bruhgirl.svg" w="250" h="250" p="50px 0px 50px 0px" />
-      </Water2Jeans>
-      <h2> What!? you want {gq} pairs?</h2>
+      <Img img="/bruhgirl.svg" w="250" h="250" p="50px 0px 50px 0px" />
+      <H2> What!? <br /> You want {gq} pairs?</H2>
       <BodyText txt="We only have 4 in stock" />
 
 
@@ -160,11 +172,9 @@ export default function WwFact() {
   if (gq <= 0) {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <Water2Jeans>
-        <Img img="/bruhgirl.svg" w="250" h="250" p="50px 0px 50px 0px" />
-      </Water2Jeans>
-      <h2>{gq} pairs!? You are very eco-friendly</h2>
-      <BodyText txt="they are literally free just get some" />
+      <Img img="/bruhgirl.svg" w="250" h="250" p="50px 0px 50px 0px" />
+      <H2>{gq} pairs!? <br /> You are very eco-friendly</H2>
+      <BodyText txt="They are literally free, just get some." />
       <StartBtn onClick={
         () => r.push("/QtySelectShirts")
       }>Try Again</StartBtn>

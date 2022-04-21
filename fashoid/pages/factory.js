@@ -55,18 +55,17 @@ const NextBtn = styled.button`
   width: 100px;
   height: 40px;
   border-radius: 8px;
-  color: #000000;
+  color: #333333;
   font-size: 16px;
   border: 0;
+  padding-right: 20px;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   margin-top: 20px;
   margin-bottom: 20px;
   background-repeat: no-repeat;
-  background-position: right 24px center;
+  background-position: right 20px center;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23333'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
 `
 
 const SubCont = styled.div`

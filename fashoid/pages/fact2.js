@@ -9,11 +9,13 @@ const MainCont = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100vw;
 `
 const Water2Jeans = styled.div`
     display: flex;
     align-items: center;
+    // flex-direction: column;
     justify-content: space-around;
     width: 100%;
     margin-top: 80px;
@@ -22,8 +24,9 @@ const Water2Jeans = styled.div`
 const WaterText = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 100%;
-    padding: 0px 0px 20px 0px;
+    padding-bottom: 30px;
 `;
 
 const StartBtn = styled.button`
@@ -46,8 +49,12 @@ const StartBtn = styled.button`
 
 const CarCo2 = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-equally;
+  flex-direction: row;
   width: 100%;
+  height: auto;
+  align-items: center;
+  padding-bottom: 30px;
 `
 
 
@@ -66,14 +73,16 @@ export default function WwFact() {
       </Water2Jeans>
 
       <WaterText>
-        {gq}
-        <BodyText margin="0px 0px 0px 230px" txt="7000 Litres" />
+        <BodyText padding="0px 0px 0px 12px" txt={<>
+          {gq} T-Shirt
+        </>} />
+        <BodyText margin="0px 0px 0px 100px" txt="7000 Litres" />
       </WaterText>
 
       <CarCo2>
-        <BodyText padding="38px 0px 0px 0px" txt="2.6 kg of CO2" />
-        <Img img="/equals.svg" w="20" />
-        <Img img="/carco2.svg" w="130" h="90" />
+        <BodyText width="50%" txt="2.6 kg of CO2" />
+        <Img img="/equals.svg" w="20" padding="0px 0px 0px 0px" margin="0px 0px 0px 0px" />
+        <Img img="/carco2.svg" w="100" h="90" padding="0px 0px 0px 50px" margin="0px 0px 0px 0px" />
       </CarCo2>
 
       <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 14km in a standard vehicle" />
@@ -91,19 +100,21 @@ export default function WwFact() {
       <Water2Jeans>
         <Img img="/tshirt.svg" w="90" h="115" />
         <Img img="/equals.svg" w="20" />
-        <Img img="/Drop.svg" w="90" h="115" />
+        <Img img="/Drop.svg" w="65" h="115" />
       </Water2Jeans>
 
       <WaterText>
-        <div>{gq} t-shirts</div>
-        <BodyText txt="14,000 Litres" />
+        <BodyText padding="0px 0px 0px 12px" txt={<>
+          {gq} T-Shirts
+        </>} />
+        <BodyText margin="0px 0px 0px 100px" txt="14,000 Litres" />
       </WaterText>
 
-      <WaterText>
-        <BodyText txt="5.2 kg of CO2" />
-        <Img img="/equals.svg" w="20" />
-        <Img img="/carco2.svg" w="130" h="90" />
-      </WaterText>
+      <CarCo2>
+        <BodyText width="50%" txt="5.2 kg of CO2" />
+        <Img img="/equals.svg" w="20" padding="0px 0px 0px 0px" margin="0px 0px 0px 0px" />
+        <Img img="/carco2.svg" w="100" h="90" padding="0px 0px 0px 50px" margin="0px 0px 0px 0px" />
+      </CarCo2>
 
       <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 28km in a standard vehicle" />
 
@@ -120,19 +131,21 @@ export default function WwFact() {
       <Water2Jeans>
         <Img img="/tshirt.svg" w="90" h="115" />
         <Img img="/equals.svg" w="20" />
-        <Img img="/Drop.svg" w="90" h="115" />
+        <Img img="/Drop.svg" w="65" h="115" />
       </Water2Jeans>
 
       <WaterText>
-        <div>{gq} t-shirts</div>
-        <BodyText txt="21,000 Litres" />
+        <BodyText padding="0px 0px 0px 12px" txt={<>
+          {gq} T-Shirts
+        </>} />
+        <BodyText margin="0px 0px 0px 100px" txt="21,000 Litres" />
       </WaterText>
 
-      <WaterText>
-        <BodyText txt="7.8 kg of CO2" />
-        <Img img="/equals.svg" w="20" />
-        <Img img="/carco2.svg" w="130" h="90" />
-      </WaterText>
+      <CarCo2>
+        <BodyText width="50%" txt="7.8 kg of CO2" />
+        <Img img="/equals.svg" w="20" padding="0px 0px 0px 0px" margin="0px 0px 0px 0px" />
+        <Img img="/carco2.svg" w="100" h="90" padding="0px 0px 0px 50px" margin="0px 0px 0px 0px" />
+      </CarCo2>
 
       <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 42km in a standard vehicle" />
 
@@ -143,28 +156,29 @@ export default function WwFact() {
     </MainCont>
   }
 
-
   if (gq === 4) {
     return <MainCont>
       <Background img="/Home_bg.svg" />
       <Water2Jeans>
         <Img img="/tshirt.svg" w="90" h="115" />
         <Img img="/equals.svg" w="20" />
-        <Img img="/Drop.svg" w="90" h="115" />
+        <Img img="/Drop.svg" w="65" h="115" />
       </Water2Jeans>
 
       <WaterText>
-        <div>{gq} t-shirts</div>
-        <BodyText txt="28,000 Litres" />
+        <BodyText padding="0px 0px 0px 12px" txt={<>
+          {gq} T-Shirts
+        </>} />
+        <BodyText margin="0px 0px 0px 100px" txt="28,000 Litres" />
       </WaterText>
 
-      <WaterText>
-        <BodyText txt="10.4 kg of CO2" />
-        <Img img="/equals.svg" w="20" />
-        <Img img="/carco2.svg" w="130" h="90" />
-      </WaterText>
+      <CarCo2>
+        <BodyText width="50%" txt="10.4 kg of CO2" />
+        <Img img="/equals.svg" w="20" padding="0px 0px 0px 0px" margin="0px 0px 0px 0px" />
+        <Img img="/carco2.svg" w="100" h="90" padding="0px 0px 0px 50px" margin="0px 0px 0px 0px" />
+      </CarCo2>
 
-      <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 56km in a standard vehicle" />
+      <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 56km in a standard vehicle." />
 
 
       <StartBtn onClick={

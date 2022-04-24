@@ -7,12 +7,13 @@ import { useRouter } from 'next/router';
 
 
 const StartBtn = styled.button`
-  background-color: #96A96F;
+  background-color: #333;
   width: 276px;
   height: 40px;
   border-radius: 8px;
   color: #fff;
   font-size: 16px;
+  font-weight: 400;
   border: 0;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;

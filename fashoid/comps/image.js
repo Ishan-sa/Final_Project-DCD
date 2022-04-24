@@ -6,7 +6,12 @@ const AllImages = styled.div`
     justify-content: center;
     padding: ${props => props.p};
     position: ${props => props.po};
-    // margin: ${props => props.m}
+    margin: ${props => props.m};
+    top: ${props => props.t};
+    right: ${props => props.right};
+    bottom: ${props => props.bottom};
+    left: ${props => props.left};
+    object-fit: ${props => props.of};
 `
 
 export default function Img({
@@ -16,8 +21,13 @@ export default function Img({
     padding = "20px 0px 20px 0px",
     position = "relative",
     margin = "0px 0px 0px 0px",
+    top = "0px",
+    right = "0px",
+    bottom = "0px",
+    left = "0px",
+    objectfit = "fill"
 }) {
     return <AllImages p={padding} po={position}>
-        <Image src={img} width={w} height={h} p={padding} m={margin} />
+        <Image src={img} width={w} height={h} p={padding} m={margin} t={top} right={right} bottom={bottom} left={left} objectFit={objectfit} />
     </AllImages>
 }

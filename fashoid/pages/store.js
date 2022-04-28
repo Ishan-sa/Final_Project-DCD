@@ -33,7 +33,7 @@ export default function Store() {
         <Background img="/Home_bg.svg" />
         <Img img="/storelady.svg" w="300" h="300" />
         <Img img="/lightlines.svg" w="390" h="9" padding="0px 0px 0px 0px" />
-        <Img img="/lightbar.svg" w="390" h="100" padding="0px 0px 0px 0px" />
+        <Img img="/lightbar.svg" w="390" h="100" padding="0px 7px 0px 7px" />
 
         <Cabinet w="296" h="464">
             <Img img="/cabinet.svg" w="296" h="464" />
@@ -45,10 +45,10 @@ export default function Store() {
                 <Img img="/jeans3.svg" w="213.67" h="179.41" po="absolute" />
             </Clothing>
         </Cabinet>
-    <Shirts onClick={
-                () => r.push("/QtySelectShirts")
-            }>
-        <Img img="/topsrack.svg" w="342" h="189" />
-    </Shirts>
+        <Shirts onClick={
+            () => r.push("/QtySelectShirts")
+        }>
+            <Img img="/topsrack.svg" w="342" h="189" />
+        </Shirts>
     </MainCont>
 }

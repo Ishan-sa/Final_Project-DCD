@@ -154,8 +154,8 @@ export default function Question1() {
             </LastNextCont>
             <Img img="/Building falling.svg"
 
-                w="900"
-                h="1750" />
+                w="600"
+                h="650" />
         </div>
 
     }
@@ -184,8 +184,8 @@ export default function Question1() {
 
             <Img img="/Building falling.svg"
 
-                w="900"
-                h="1750" />
+                w="600"
+                h="650" />
 
         </div>
 
@@ -292,8 +292,8 @@ export default function Question1() {
 
             <Img img="/Smoke.svg"
 
-                w="900"
-                h="1750" />
+                w="600"
+                h="650" />
 
 
 
@@ -321,8 +321,8 @@ export default function Question1() {
 
             <Img img="/Smoke.svg"
 
-                w="900"
-                h="1750" />
+                w="600"
+                h="650" />
 
         </div>
 
@@ -422,16 +422,24 @@ export default function Question1() {
                 })
             }>Next Question{q2}</QuizStartBtn>
             <Img img="/Caution Drowning.svg"
-
                 w="100"
-                h="100" />
+                h="100"
+                padding="20px 0px 0px 0px" />
 
-            <Img img="/Drowning.svg"
+            <Img img="/ManDrowning.svg"
+                w="500"
+                h="400"
+                position="absolute"
+                t="20px"
+                padding="0px 0px 0px 0px"
+            />
 
-                w="900"
-                h="1750" />
-
-
+            <Img img="/water.svg"
+                w="400"
+                h="413"
+                objectfit="cover"
+                position="absolute"
+                padding="0px 0px 0px 0px" />
 
         </div>
 
@@ -454,15 +462,23 @@ export default function Question1() {
                 })
             }>Next Question{q2}</QuizStartBtn>
             <Img img="/Caution Drowning.svg"
-
                 w="100"
-                h="100" />
+                h="100"
+                padding="20px 0px 0px 0px" />
 
-            <Img img="/Drowning.svg"
+            <Img img="/ManDrowning.svg"
+                w="500"
+                h="400"
+                padding="0px 0px 0px 0px"
+            />
 
-                w="900"
-                h="1750" />
-
+            <Img img="/water.svg"
+                w="400"
+                h="413"
+                objectfit="cover"
+                position="absolute"
+                padding="0px 0px 0px 0px"
+            />
         </div>
 
     }

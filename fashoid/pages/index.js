@@ -7,12 +7,13 @@ import { useRouter } from 'next/router';
 
 
 const StartBtn = styled.button`
-  background-color: #96A96F;
+  background-color: #333;
   width: 276px;
   height: 40px;
   border-radius: 8px;
   color: #fff;
   font-size: 16px;
+  font-weight: 400;
   border: 0;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
@@ -43,7 +44,7 @@ export default function Main() {
       h="188.01"
     />
 
-    <BodyText txt={<>
+    <BodyText padding="0px 15px 0px 15px" txt={<>
       <b>Fashoid</b> is a web app that has the goal of letting its users know how much resources it takes to make a set of clothing such as Jeans and a T-shirt. It also teaches its users the downsides of <b>fast fashion</b> and <b>over-consumption</b>.
     </>} />
     <BodyText txt="The app will take you through the production process that is common for most fast fashion brands." />
@@ -79,7 +80,7 @@ export default function Main() {
     />
 
     <StartBtn onClick={
-      () => r.push("/store")
+      () => r.push("/start")
     }>Click to enter simulation</StartBtn>
 
   </MainCont >

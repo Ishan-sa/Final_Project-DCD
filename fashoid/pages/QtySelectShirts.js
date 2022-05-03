@@ -62,13 +62,13 @@ const Counter = () => {
     const [count, setCount] = useState(0)
     return (
         <AllCounter>
-            <IncBtn onClick={
-                () => setCount(count + 1)}> {ChangeQuantity(count)}
-            </IncBtn>
-            <CountCont className="styles.count">{count}</CountCont>
             <DecBtn onClick={
                 () => setCount(count - 1)}> {ChangeQuantity(count)}
             </DecBtn>
+            <CountCont className="styles.count">{count}</CountCont>
+            <IncBtn onClick={
+                () => setCount(count + 1)}> {ChangeQuantity(count)}
+            </IncBtn>
         </AllCounter>
     )
 }

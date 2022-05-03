@@ -2,6 +2,7 @@ import Background from "../comps/background";
 import Img from "../comps/image";
 import styled from "styled-components";
 import { useRouter } from 'next/router';
+import { ChangeType } from "../data/data";
 
 const Cabinet = styled.div`
     position: relative;
@@ -35,7 +36,9 @@ export default function Store() {
         <Img img="/lightlines.svg" w="390" h="9" padding="0px 0px 0px 0px" />
         <Img img="/lightbar.svg" w="390" h="100" padding="0px 7px 0px 7px" />
 
-        <Cabinet w="296" h="464">
+        <Cabinet w="296" h="464" onClick={
+            () => ChangeType("jeans")
+        }>
             <Img img="/cabinet.svg" w="296" h="464" />
             <Clothing onClick={
                 () => r.push("/QtySelect")
@@ -45,10 +48,16 @@ export default function Store() {
                 <Img img="/jeans3.svg" w="213.67" h="179.41" po="absolute" />
             </Clothing>
         </Cabinet>
-        <Shirts onClick={
-            () => r.push("/QtySelectShirts")
-        }>
-            <Img img="/topsrack.svg" w="342" h="189" />
-        </Shirts>
+
+        <div onClick={
+            () => ChangeType("shirts")
+            }>
+            <Shirts onClick={
+            () => r.push("/QtySelect")
+            }>
+                <Img img="/topsrack.svg" w="342" h="189" />
+            </Shirts>
+        </div>
+
     </MainCont>
 }

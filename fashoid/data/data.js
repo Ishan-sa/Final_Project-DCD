@@ -6,12 +6,20 @@ export const qs = [
 
 var answers = [];
 var quantity = '';
+var type = '';
 
 export function ChangeQuantity(n){
     quantity = n;
-    console.log (quantity);
 }
 
 export function GetQuantity(){
     return quantity;
+}
+
+export function ChangeType(t){
+    type = t;
+}
+
+export function GetType(){
+    return type;
 }

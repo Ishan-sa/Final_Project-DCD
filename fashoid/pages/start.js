@@ -4,6 +4,7 @@ import Background from "../comps/background";
 import BodyText from "../comps/text-content";
 import Img from "../comps/image";
 import Image from "next/image";
+import Nav from "../comps/navBtns";
 
 const FashoidHead = styled.div`
     position: absolute;
@@ -36,6 +37,7 @@ export default function Start() {
     const r = useRouter();
 
     return <div>
+        <Nav />
         <Background img="/start_page.svg" />
 
         <FashoidHead>

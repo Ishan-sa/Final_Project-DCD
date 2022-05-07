@@ -3,6 +3,8 @@ import Img from "../comps/image";
 import styled from "styled-components";
 import { useRouter } from 'next/router';
 import { ChangeType } from "../data/data";
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 
 const Cabinet = styled.div`
     position: relative;
@@ -27,10 +29,37 @@ const Shirts = styled.div`
     cursor: pointer;
 `;
 
+const Home = styled(HomeOutlinedIcon)`
+    color: #333;
+    height: 35px;
+    width: auto;
+    position: absolute;
+    margin: 15px 0px 0px 330px;
+    cursor: pointer;
+`
+const Back = styled(ArrowBackIosSharpIcon)`
+    position: absolute;
+    margin: 20px 320px 0px 0px;
+    height: 30px;
+    width: auto;
+    color: #333;
+    cursor: pointer;
+`
+
 export default function Store() {
     const r = useRouter();
 
     return <MainCont>
+        <Home
+            onClick={
+                () => r.push("/")
+            }
+        />
+        <Back
+            onClick={
+                () => r.back("")
+            }
+        />
         <Background img="/Home_bg.svg" />
         <Img img="/storelady.svg" w="300" h="300" />
         <Img img="/lightlines.svg" w="390" h="9" padding="0px 0px 0px 0px" />
@@ -51,9 +80,9 @@ export default function Store() {
 
         <div onClick={
             () => ChangeType("shirts")
-            }>
+        }>
             <Shirts onClick={
-            () => r.push("/QtySelect")
+                () => r.push("/QtySelect")
             }>
                 <Img img="/topsrack.svg" w="342" h="189" />
             </Shirts>

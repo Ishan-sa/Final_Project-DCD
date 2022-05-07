@@ -4,6 +4,7 @@ import Img from "../comps/image";
 import BodyText from "../comps/text-content";
 import Background from "../comps/background";
 import { useRouter } from 'next/router';
+import { topToBottom, fadeIn } from "../data/animation";
 
 
 const StartBtn = styled.button`
@@ -29,6 +30,7 @@ const MainCont = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100vw;
+  animation: ${topToBottom} 1s;
 `
 
 export default function Main() {

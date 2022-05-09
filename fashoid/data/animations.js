@@ -35,3 +35,13 @@ export const ContScale = keyframes`
         scale: 1.2;
     }
 `
+export const HoverHome = keyframes`
+    from{
+        opacity: 0;
+        background-color: #333;
+    }
+    to{
+        opacity: 1;
+        baclground-color: #333;
+    }
+`

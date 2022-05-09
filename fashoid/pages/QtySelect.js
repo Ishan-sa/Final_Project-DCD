@@ -4,6 +4,8 @@ import Background from "../comps/background";
 import BodyText from "../comps/text-content";
 import { useState } from 'react';
 import { ChangeQuantity } from '../data/data'
+import HomeIcon from '@mui/icons-material/Home';
+import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 
 
 const IncBtn = styled.button`
@@ -57,19 +59,60 @@ const NextBtnCont = styled.div`
     display: flex;
     justify-content: center;
 `
+const Home = styled(HomeIcon)`
+    color: #333;
+    height: 40px;
+    width: auto;
+    position: absolute;
+    margin: 15px 0px 0px 330px;
+    cursor: pointer;
+`
+const Back = styled(ArrowBackIosSharpIcon)`
+    position: absolute;
+    margin: 20px 320px 0px 0px;
+    height: 30px;
+    width: auto;
+    color: #333;
+    cursor: pointer;
+`
+const MainCont = styled.div`
+    width: 100vw;
+    padding: 120px 0px 120px 0px;
+`
+
+const NavCont = styled.div`
+    position: absolute;
+    bottom: 845px;
+    right: 375px;
+`
 
 const Counter = () => {
+    const r = useRouter();
     const [count, setCount] = useState(0);
     return (
-        <AllCounter>
-            <DecBtn onClick={
-                () => setCount(count - 1)}> {ChangeQuantity(count)}
-            </DecBtn>
-            <CountCont className="styles.count">{count}</CountCont>
-            <IncBtn onClick={
-                () => setCount(count + 1)}> {ChangeQuantity(count)}
-            </IncBtn>
-        </AllCounter>
+        <MainCont>
+            <NavCont>
+                <Home
+                    onClick={
+                        () => r.push("/")
+                    }
+                />
+                <Back
+                    onClick={
+                        () => r.back("")
+                    }
+                />
+            </NavCont>
+            <AllCounter>
+                <DecBtn onClick={
+                    () => setCount(count - 1)}> {ChangeQuantity(count)}
+                </DecBtn>
+                <CountCont className="styles.count">{count}</CountCont>
+                <IncBtn onClick={
+                    () => setCount(count + 1)}> {ChangeQuantity(count)}
+                </IncBtn>
+            </AllCounter>
+        </MainCont>
     )
 }
 

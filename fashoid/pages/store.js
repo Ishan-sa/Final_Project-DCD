@@ -3,6 +3,7 @@ import Img from "../comps/image";
 import styled from "styled-components";
 import { useRouter } from 'next/router';
 import { ChangeType } from "../data/data";
+import HomeIcon from '@mui/icons-material/Home';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 import { HoverHome } from "../data/animations";
@@ -30,7 +31,7 @@ const Shirts = styled.div`
     cursor: pointer;
 `;
 
-const Home = styled(HomeOutlinedIcon)`
+const Home = styled(HomeIcon)`
     color: #333;
     height: 40px;
     width: auto;

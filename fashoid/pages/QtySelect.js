@@ -62,13 +62,13 @@ const Counter = () => {
     const [count, setCount] = useState(0);
     return (
         <AllCounter>
-            <IncBtn onClick={
-                () => setCount(count + 1)}> {ChangeQuantity(count)}
-            </IncBtn>
-            <CountCont className="styles.count">{count}</CountCont>
             <DecBtn onClick={
                 () => setCount(count - 1)}> {ChangeQuantity(count)}
             </DecBtn>
+            <CountCont className="styles.count">{count}</CountCont>
+            <IncBtn onClick={
+                () => setCount(count + 1)}> {ChangeQuantity(count)}
+            </IncBtn>
         </AllCounter>
     )
 }
@@ -102,7 +102,7 @@ export default function QtySelect() {
 
     return <All_Cont>
         <Background img="/Home_bg.svg" />
-        <BodyText txt="How many would you like to buy?" fontsize="20px" />
+        <BodyText txt="How many would you like to buy? (Upto 4)" fontsize="20px" />
         <Counter />
         <NextBtnCont>
             <NextBtn onClick={

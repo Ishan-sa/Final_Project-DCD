@@ -9,19 +9,19 @@ const FashoidHead = styled.div`
     position: absolute;
     font-size: 24px;
     font-weight: 600;
-    top: 239px;
+    top: 251px;
     left: 155px;
 `
 const FashSubHead = styled.div`
     position: absolute;
     font-size: 15px;
-    top: 274px;
+    top: 285px;
     left: 87px;
 `
 const EnterHere = styled.div`
     position: absolute;
     font-size: 16px;
-    top: 389px;
+    top: 397px;
     left: 229px;
     transform: rotate(-9.53deg);
 `
@@ -54,7 +54,7 @@ export default function Start() {
         </EnterHere>
 
         <Cursor onClick={
-            () => r.push("/QtySelect")
+            () => r.push("/store")
         }>
             <Img
                 img="/Pointer.svg"

@@ -8,7 +8,7 @@ import { topToBottom, fadeIn } from "../data/animations";
 
 
 const StartBtn = styled.button`
-  background-color: #333;
+  background-color: #19AFF0;
   width: 276px;
   height: 40px;
   border-radius: 8px;
@@ -40,45 +40,17 @@ export default function Main() {
   return <MainCont>
     <Background img="/Home_bg.svg" />
     <Head1 txt="What is Fashoid?" />
-    <Img
-      img="/GirlThinking.svg"
-      w="65.61"
-      h="188.01"
-    />
 
-    <BodyText padding="0px 15px 0px 15px" txt={<>
-      <b>Fashoid</b> is a web app that has the goal of letting its users know how much resources it takes to make a set of clothing such as Jeans and a T-shirt. It also teaches its users the downsides of <b>fast fashion</b> and <b>over-consumption</b>.
+    <BodyText margin="0px 50px 0px 50px" padding="30px 20px 15px 20px" txt={<>
+      <b>Fashoid</b> is a web app that has the goal of letting its users know how much resources it takes to make a set of clothing such as Jeans and a T-shirt. It also teaches its users the downsides of <b>fast fashion</b> and<br/> <b>over-consumption</b>.
     </>} />
-    <BodyText txt="The app will take you through the production process that is common for most fast fashion brands." />
+    <BodyText margin="0px 50px 0px 30px" padding="20px 20px 20px 20px" txt="The app will take you through the production process that is common for most fast fashion brands." />
 
     <Img
-      img="/Jean.svg"
-      w="81.02"
-      h="103"
-    />
-
-    <Img
-      img="/Down_arrow.svg"
-      w="20"
-      h="22"
-    />
-
-    <Img
-      img="/Drop.svg"
-      w="50.45"
-      h="74.28"
-    />
-
-    <Img
-      img="/Down_arrow.svg"
-      w="20"
-      h="22"
-    />
-
-    <Img
-      img="/Factory.svg"
-      w="96.11"
-      h="101.76"
+    img="/startdiagram.svg"
+    w="320.11"
+    h="109"
+    padding="15px 15px 100px 15px"
     />
 
     <StartBtn onClick={

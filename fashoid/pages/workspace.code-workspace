@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "../.next"
+		},
+		{
+			"path": "../comps"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "api"
+		},
+		{
+			"path": "../public"
+		},
+		{
+			"path": "../node_modules"
+		},
+		{
+			"path": "../styles"
+		}
+	],
+	"settings": {}
+}

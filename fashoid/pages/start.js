@@ -22,7 +22,6 @@ const FashSubHead = styled.div`
     top: 285px;
     left: 87px;
     animation: ${topToBottom} 1s;
-    transition: 0.5s;
 `
 const EnterHere = styled.div`
     position: absolute;

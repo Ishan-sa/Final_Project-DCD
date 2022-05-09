@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { ChangeType } from "../data/data";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
+import { HoverHome } from "../data/animations";
 
 const Cabinet = styled.div`
     position: relative;
@@ -31,7 +32,7 @@ const Shirts = styled.div`
 
 const Home = styled(HomeOutlinedIcon)`
     color: #333;
-    height: 35px;
+    height: 40px;
     width: auto;
     position: absolute;
     margin: 15px 0px 0px 330px;

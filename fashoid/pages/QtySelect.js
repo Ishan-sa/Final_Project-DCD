@@ -99,6 +99,7 @@ const NextBtn = styled.button`
 
 export default function QtySelect() {
     const r = useRouter();
+    const { type } = r.query;
 
     return <All_Cont>
         <Background img="/Home_bg.svg" />
@@ -106,7 +107,9 @@ export default function QtySelect() {
         <Counter />
         <NextBtnCont>
             <NextBtn onClick={
-                () => r.push("/fact")
+                () => r.replace({
+                    pathname: "/fact",
+                })
             }>Next</NextBtn>
         </NextBtnCont>
     </All_Cont>

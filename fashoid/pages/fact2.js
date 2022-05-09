@@ -178,7 +178,7 @@ export default function WwFact() {
         <Img img="/carco2.svg" w="100" h="90" padding="0px 0px 0px 50px" margin="0px 0px 0px 0px" />
       </CarCo2>
 
-      <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 56km in a standard vehicle." />
+      <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 56km in a standard vehicle.  " />
 
 
       <StartBtn onClick={

@@ -6,37 +6,34 @@ import Img from "../comps/image";
 import Image from "next/image";
 import HomeIcon from '@mui/icons-material/Home';
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
-import { fadeIn, topToBottom, ContScale } from '../data/animations'
+import { fadeIn, topToBottom, CloudsMovingLTR, ContScale } from '../data/animations'
 
 const FashoidHead = styled.div`
-    position: absolute;
+    position: relative;
+    padding: 250px 0px 0px 45px;
     font-size: 24px;
     font-weight: 600;
-    top: 251px;
-    left: 155px;
     animation: ${topToBottom} 1s;
 `
 const FashSubHead = styled.div`
-    position: absolute;
+    position: relative;
     font-size: 15px;
-    top: 285px;
-    left: 87px;
+    padding: 8px 0px 0px 50px;
     animation: ${topToBottom} 1s;
 `
 const EnterHere = styled.div`
-    position: absolute;
+    position: relative;
+    padding: 105px 0px 0px 180px;
     font-size: 16px;
-    top: 397px;
-    left: 229px;
     transform: rotate(-9.53deg);
     animation: ${fadeIn} 2s;
 `
 const Cursor = styled.div`
-    position: absolute;
-    left: 73.85%;
-    top: 51.8%;
+    position: relative;
+    margin: 3px 0px 0px 260px;
     cursor: pointer;
-    animation: ${topToBottom} 1.5s;
+    animation: 1.5s linear ${ContScale};
+    animation-iteration-count: infinite;
 `
 
 const Back = styled(ArrowBackIosSharpIcon)`
@@ -46,10 +43,25 @@ const Back = styled(ArrowBackIosSharpIcon)`
     width: auto;
     color: #333;
     cursor: pointer;
+    z-index: 999;
+    animation: ${topToBottom} 1s;
 `
 
 const HomeCont = styled.div`
     animation: ${fadeIn} 0.5s;
+`
+
+const CarCont = styled.div`
+    display: flex;
+    padding: 120px 0px 0px 40px;
+`
+const CloudsCont = styled.div`
+    position: absolute;
+    display: flex;
+    padding: 27px 0px 0px 20px;
+    width: 370px;
+    animation: ${CloudsMovingLTR} 30s linear;
+    // animation-iteration-count: infinite;
 `
 
 export default function Start() {
@@ -61,6 +73,26 @@ export default function Start() {
                 () => r.back("")
             }
         />
+        <CloudsCont>
+            <Img
+                img="/cloud1.svg"
+                w="106"
+                h="66"
+                padding="0px 0px 50px 0px"
+            />
+            <Img
+                img="/cloud2.svg"
+                w="106"
+                h="66"
+                padding="100px 0px 0px 30px"
+            />
+            <Img
+                img="/cloud3.svg"
+                w="106"
+                h="66"
+                padding="0px 0px 120px 0px"
+            />
+        </CloudsCont>
         <Background img="/start_page.svg" />
 
         <FashoidHead>
@@ -87,6 +119,21 @@ export default function Start() {
                 h="37.09"
             />
         </Cursor>
+        <CarCont>
+            <Img
+                img="/car.svg"
+                w="126"
+                h="51"
+                padding="0px 0px 90px 0px"
+                animation="CarMovingRight"
+            />
+            <Img
+                img="/car2.svg"
+                w="183"
+                h="52"
+                padding="110px 0px 0px 0px"
+            />
+        </CarCont>
 
 
     </HomeCont>

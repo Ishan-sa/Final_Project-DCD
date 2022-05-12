@@ -4,9 +4,11 @@ import styled from "styled-components";
 import { useRouter } from 'next/router';
 import { ChangeType } from "../data/data";
 import HomeIcon from '@mui/icons-material/Home';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
-import { HoverHome } from "../data/animations";
+import { topToBottom, ScaleIn } from "../data/animations";
+import Aos from "aos";
+import { useEffect } from "react"
+import "aos/dist/aos.css";
 
 const Cabinet = styled.div`
     position: relative;
@@ -25,6 +27,7 @@ const MainCont = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100vw;
+  animation: ${topToBottom} 1s;
 `
 
 const Shirts = styled.div`
@@ -38,6 +41,7 @@ const Home = styled(HomeIcon)`
     position: absolute;
     margin: 15px 0px 0px 330px;
     cursor: pointer;
+    animation: ${topToBottom} 1s;
 `
 const Back = styled(ArrowBackIosSharpIcon)`
     position: absolute;
@@ -46,10 +50,20 @@ const Back = styled(ArrowBackIosSharpIcon)`
     width: auto;
     color: #333;
     cursor: pointer;
+    animation: ${topToBottom} 1s;
+`
+const StoreLady = styled.div`
+    animation: ${ScaleIn} 0.5s linear;
+`
+const ShirtsCont = styled.div`
+    overflow: hidden;
 `
 
 export default function Store() {
     const r = useRouter();
+    useEffect(() => {
+        Aos.init({ duration: 1000 });
+    }, []);
 
     return <MainCont>
         <Home
@@ -63,32 +77,41 @@ export default function Store() {
             }
         />
         <Background img="/Home_bg.svg" />
-        <Img img="/storelady.svg" w="300" h="300" />
-        <Img img="/lightlines.svg" w="390" h="9" padding="0px 0px 0px 0px" />
-        <Img img="/lightbar.svg" w="390" h="100" padding="0px 7px 0px 7px" />
+        <StoreLady
+            data-aos="fade-down">
+            <Img img="/storelady.svg" w="300" h="300" />
+        </StoreLady>
+        <div data-aos="fade-down">
+            <Img img="/lightlines.svg" w="390" h="9" padding="0px 0px 0px 0px" />
+            <Img img="/lightbar.svg" w="390" h="100" padding="0px 7px 0px 7px" />
+        </div>
 
         <Cabinet w="296" h="464" onClick={
             () => ChangeType("jeans")
         }>
             <Img img="/cabinet.svg" w="296" h="464" />
-            <Clothing onClick={
-                () => r.push("/QtySelect")
-            }>
-                <Img img="/jeanshat.svg" w="221" h="37" po="absolute" />
+            <Clothing
+                data-aos="fade-down"
+                onClick={
+                    () => r.push("/QtySelect")
+                }>
+                <Img img="/topJeans.svg" w="221" h="37" po="absolute" />
                 <Img img="/foldedjeans.svg" w="221" h="37" po="absolute" />
                 <Img img="/jeans3.svg" w="213.67" h="179.41" po="absolute" />
             </Clothing>
         </Cabinet>
 
-        <div onClick={
-            () => ChangeType("shirts")
-        }>
+        <ShirtsCont
+            data-aos="flip-up"
+            onClick={
+                () => ChangeType("shirts")
+            }>
             <Shirts onClick={
                 () => r.push("/QtySelect")
             }>
                 <Img img="/topsrack.svg" w="342" h="189" />
             </Shirts>
-        </div>
+        </ShirtsCont>
 
     </MainCont>
 }

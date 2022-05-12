@@ -5,6 +5,9 @@ import { useRouter } from "next/router";
 import BodyText from "../comps/text-content";
 import Head1 from "../comps/heading";
 import Img from "../comps/image";
+import { topToBottom } from "../data/animations";
+import HomeIcon from '@mui/icons-material/Home';
+import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 
 
 const OpsButton = styled.button`
@@ -63,7 +66,7 @@ const QuizStartBtn = styled.button`
 `;
 
 const TextCont = styled.div`
-    padding-top: 40px;
+    padding: 40px 15px 0px 15px;
 `
 const LastNext = styled.button`
     border-radius: 8px;
@@ -82,6 +85,24 @@ const LastNextCont = styled.div`
     justify-content: center;
     padding-top: 40px;
 `
+const Home = styled(HomeIcon)`
+    color: #333;
+    height: 40px;
+    width: auto;
+    position: absolute;
+    margin: 15px 0px 0px 330px;
+    cursor: pointer;
+    animation: ${topToBottom} 1s;
+`
+const Back = styled(ArrowBackIosSharpIcon)`
+    position: absolute;
+    margin: 20px 320px 0px 20px;
+    height: 30px;
+    width: auto;
+    color: #333;
+    cursor: pointer;
+    animation: ${topToBottom} 1s;
+`
 
 export default function Question1() {
 
@@ -94,7 +115,7 @@ export default function Question1() {
     const { q3 } = r.query;
     const { correct3 } = r.query;
     const { incorrect3 } = r.query;
-    const {q1} = r.query;
+    const { q1 } = r.query;
 
 
 
@@ -525,10 +546,20 @@ export default function Question1() {
 
     }
 
-////Start page//////
+    ////Start page//////
 
     return <div>
         <Background img="/Home_bg.svg" />
+        <Home
+            onClick={
+                () => r.push("/")
+            }
+        />
+        <Back
+            onClick={
+                () => r.back("")
+            }
+        />
         <Img img="/Quiz.svg"
             w="380"
             h="420"

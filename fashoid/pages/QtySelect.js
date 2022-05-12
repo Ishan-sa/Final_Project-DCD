@@ -6,6 +6,9 @@ import { useState } from 'react';
 import { ChangeQuantity } from '../data/data'
 import HomeIcon from '@mui/icons-material/Home';
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
+import { useEffect } from "react"
+import "aos/dist/aos.css";
+import Aos from "aos";
 
 
 const IncBtn = styled.button`
@@ -103,7 +106,7 @@ const Counter = () => {
                     }
                 />
             </NavCont>
-            <AllCounter>
+            <AllCounter data-aos="flip-up">
                 <DecBtn onClick={
                     () => setCount(count - 1)}> {ChangeQuantity(count)}
                 </DecBtn>
@@ -143,12 +146,17 @@ const NextBtn = styled.button`
 export default function QtySelect() {
     const r = useRouter();
     const { type } = r.query;
+    useEffect(() => {
+        Aos.init({ duration: 1000 });
+    }, []);
 
     return <All_Cont>
         <Background img="/Home_bg.svg" />
-        <BodyText txt="How many would you like to buy? (Upto 4)" fontsize="20px" />
+        <div data-aos="flip-up">
+            <BodyText txt="How many would you like to buy? (Upto 4)" fontsize="20px" />
+        </div>
         <Counter />
-        <NextBtnCont>
+        <NextBtnCont data-aos="flip-down">
             <NextBtn onClick={
                 () => r.replace({
                     pathname: "/fact",

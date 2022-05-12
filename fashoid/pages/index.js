@@ -4,7 +4,7 @@ import Img from "../comps/image";
 import BodyText from "../comps/text-content";
 import Background from "../comps/background";
 import { useRouter } from 'next/router';
-import { topToBottom, fadeIn } from "../data/animations";
+import { topToBottom, fadeIn, SlideInRight, SlideInLeft } from "../data/animations";
 
 
 const StartBtn = styled.button`
@@ -33,29 +33,63 @@ const MainCont = styled.div`
   animation: ${topToBottom} 1s;
 `
 
+const SlideInRightDivCont = styled.div`
+  animation: ${SlideInRight};
+  animation-duration: 1s;
+  display: flex;
+  justify-content: center;
+  width: 510px;
+`
+const SlideInLeftDivCont = styled.div`
+  animation: ${SlideInLeft};
+  animation-duration: 1s;
+  display: flex;
+  justify-content: center;
+  width: 510px;
+`
+
 export default function Main() {
 
   const r = useRouter();
 
   return <MainCont>
     <Background img="/Home_bg.svg" />
-    <Head1 txt="What is Fashoid?" />
+    <SlideInRightDivCont>
+      <Head1 txt="What is Fashoid?" />
+    </SlideInRightDivCont>
+    <SlideInLeftDivCont>
+      <Img
+        img="/GirlThinking.svg"
+        w="65"
+        h="150"
+        padding="10px 0px 0px 0px"
+      />
+    </SlideInLeftDivCont>
+    <SlideInRightDivCont>
+      <BodyText margin="0px 50px 0px 50px" padding="30px 20px 15px 20px" txt={<>
+        <b>Fashoid</b> is a web app that has the goal of letting its users know how much resources it takes to make a set of clothing such as Jeans and a T-shirt. It also teaches its users the downsides of <b>fast fashion</b> and<br /> <b>over-consumption</b>.
+      </>} />
+    </SlideInRightDivCont>
 
-    <BodyText margin="0px 50px 0px 50px" padding="30px 20px 15px 20px" txt={<>
-      <b>Fashoid</b> is a web app that has the goal of letting its users know how much resources it takes to make a set of clothing such as Jeans and a T-shirt. It also teaches its users the downsides of <b>fast fashion</b> and<br/> <b>over-consumption</b>.
-    </>} />
-    <BodyText margin="0px 50px 0px 30px" padding="20px 20px 20px 20px" txt="The app will take you through the production process that is common for most fast fashion brands." />
+    <SlideInRightDivCont>
+      <BodyText margin="0px 50px 0px 30px" padding="30px 30px 20px 50px" txt="The app will take you through the production process that is common for most fast fashion brands." />
+    </SlideInRightDivCont>
 
-    <Img
-    img="/startdiagram.svg"
-    w="320.11"
-    h="109"
-    padding="15px 15px 100px 15px"
-    />
+    <SlideInLeftDivCont>
+      <Img
+        img="/startdiagram.svg"
+        w="320.11"
+        h="109"
+        padding="15px 15px 80px 15px"
+      />
+    </SlideInLeftDivCont>
 
-    <StartBtn onClick={
-      () => r.push("/start")
-    }>Click to enter simulation</StartBtn>
+    <SlideInRightDivCont>
+      <StartBtn className="StartBtn" onClick={
+        () => r.push("/start")
+      }>Click to enter simulation</StartBtn>
+    </SlideInRightDivCont>
+
 
   </MainCont >
 }

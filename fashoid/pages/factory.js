@@ -1,9 +1,10 @@
-import Background2 from "../comps/background";
-import Background from "../comps/background";
-import Img from "../comps/image";
 import styled from "styled-components";
 import BodyText from "../comps/text-content";
 import { useRouter } from 'next/router';
+import { topToBottom } from "../data/animations";
+import { useEffect } from "react"
+import "aos/dist/aos.css";
+import Aos from "aos";
 
 const MainCont = styled.div`
     display: flex;
@@ -30,13 +31,13 @@ const FactBackgroundDiv = styled.div`
 `;
 
 const Warehouse = styled.img`
-    margin-top: 210px;
+    margin-top: 220px;
     width: 200px;
     cursor: pointer;
 `;
 
 const Warehouse2 = styled.img`
-    margin-top: 261px;
+    margin-top: 241px;
     width: 250px;
     height: 250px;
     cursor: pointer;
@@ -74,6 +75,10 @@ const SubCont = styled.div`
 
 export default function Factory() {
 
+    useEffect(() => {
+        Aos.init({});
+    }, []);
+
     const r = useRouter();
     const { page } = r.query;
 
@@ -83,15 +88,19 @@ export default function Factory() {
                 <FactBackground src="/factory_bg.svg"></FactBackground>
             </FactBackgroundDiv>
             <SubCont>
-                <BodyText txt="Oh no......." />
-                <Warehouse src="/factory2.svg" onClick={
-                    () => r.replace({
-                        pathname: "/factory",
-                        query: {
-                            page: page === undefined ? 1 : Number(page) + 1,
-                        }
-                    })
-                } />
+                <div data-aos="flip-down" data-aos-duration="500">
+                    <BodyText txt="Oh no......." />
+                </div>
+                <Warehouse
+                    data-aos="flip-down" data-aos-duration="1000"
+                    src="/factory2.svg" onClick={
+                        () => r.replace({
+                            pathname: "/factory",
+                            query: {
+                                page: page === undefined ? 1 : Number(page) + 1,
+                            }
+                        })
+                    } />
             </SubCont>
 
         </MainCont>
@@ -103,16 +112,20 @@ export default function Factory() {
                 <FactBackground src="/factory_bg.svg"></FactBackground>
             </FactBackgroundDiv>
             <SubCont>
-                <BodyText txt="It’s going down!!!!!!"></BodyText>
+                <div data-aos="flip-down" data-aos-duration="500">
+                    <BodyText txt="It's going down!!!!!!"></BodyText>
+                </div>
             </SubCont>
-            <Warehouse src="/factory3.svg" onClick={
-                () => r.replace({
-                    pathname: "/factory",
-                    query: {
-                        page: page === undefined ? 1 : Number(page) + 1,
-                    }
-                })
-            } />
+            <Warehouse
+                data-aos="flip-down" data-aos-duration="1000"
+                src="/factory3.svg" onClick={
+                    () => r.replace({
+                        pathname: "/factory",
+                        query: {
+                            page: page === undefined ? 1 : Number(page) + 1,
+                        }
+                    })
+                } />
         </MainCont>
     }
 
@@ -122,16 +135,20 @@ export default function Factory() {
                 <FactBackground src="/factory_bg.svg"></FactBackground>
             </FactBackgroundDiv>
             <SubCont>
-                <BodyText txt="BOOM!!!"></BodyText>
+                <div data-aos="flip-down" data-aos-duration="500">
+                    <BodyText txt="BOOM!!!"></BodyText>
+                </div>
             </SubCont>
-            <Warehouse2 src="/factory4.svg" onClick={
-                () => r.replace({
-                    pathname: "/factory",
-                    query: {
-                        page: page === undefined ? 1 : Number(page) + 1,
-                    }
-                })
-            } />
+            <Warehouse2
+                data-aos="flip-down" data-aos-duration="1000"
+                src="/factory4.svg" onClick={
+                    () => r.replace({
+                        pathname: "/factory",
+                        query: {
+                            page: page === undefined ? 1 : Number(page) + 1,
+                        }
+                    })
+                } />
         </MainCont>
     }
 
@@ -142,11 +159,13 @@ export default function Factory() {
             <FactBackgroundDiv>
                 <FactBackground src="/factory_bg.svg"></FactBackground>
             </FactBackgroundDiv>
-            <SubCont>
+            <SubCont data-aos="flip-down" data-aos-duration="500">
                 <BodyText txt={<>The <b>Rana Plaza</b> factory produced clothes for many fast fashion companies.</>}></BodyText>
                 <BodyText txt={<>The building collapsed in <b>2011</b> from poor building structure and unsafe working conditions and killed <b>1,132 people.</b></>}></BodyText>
             </SubCont>
-            <Warehouse2 src="/factory5.svg" />
+            <Warehouse2
+                data-aos="flip-down" data-aos-duration="1000"
+                src="/factory5.svg" />
             <NextBtn onClick={
                 () => r.push("/Quiz")
             }>Next</NextBtn>
@@ -159,16 +178,19 @@ export default function Factory() {
         <FactBackgroundDiv>
             <FactBackground src="/factory_bg.svg"></FactBackground>
         </FactBackgroundDiv>
-        <SubCont>
+        <SubCont data-aos="flip-down" data-aos-duration="1000">
             <BodyText txt="Keep Clicking on the building to make your product."></BodyText>
         </SubCont>
-        <Warehouse src="/Factory.svg" onClick={
-            () => r.replace({
-                pathname: "/factory",
-                query: {
-                    page: page === undefined ? 1 : Number(page) + 1,
-                }
-            })
-        } />
+        <Warehouse
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            src="/Factory.svg" onClick={
+                () => r.replace({
+                    pathname: "/factory",
+                    query: {
+                        page: page === undefined ? 1 : Number(page) + 1,
+                    }
+                })
+            } />
     </MainCont>
 }

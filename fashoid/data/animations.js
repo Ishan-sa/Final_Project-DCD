@@ -35,13 +35,57 @@ export const ContScale = keyframes`
         scale: 1.2;
     }
 `
-export const HoverHome = keyframes`
+export const BtnClick = keyframes`
     from{
-        opacity: 0;
-        background-color: #333;
+        scale: 1;
     }
     to{
+        scale: 0.9;
+    }
+`
+export const SlideInRight = keyframes`
+    from {
+        margin-right: 1000px;
+        opacity: 0;
+    }
+    to{
+        margin-right: 0px;
         opacity: 1;
-        baclground-color: #333;
+    }
+`
+export const SlideInLeft = keyframes`
+    from {
+        margin-left: 1000px;
+        opacity: 0;
+    }
+    to{
+        margin-right: 0px;
+        opacity: 1;
+    }
+`
+export const CarMovingRight = keyframes`
+    from{
+        margin-right: 1000px
+    }
+    to{
+        margin-right: -1000px;
+    }
+`
+export const CloudsMovingLTR = keyframes`
+    from{
+        right: 350px
+    }
+    to{
+        right: -350px;
+    }
+`
+export const ScaleIn = keyframes`
+    from{
+        scale: 1.1;
+        opacity: 0;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
     }
 `

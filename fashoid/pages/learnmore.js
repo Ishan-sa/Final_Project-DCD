@@ -2,6 +2,9 @@ import styled from "styled-components";
 import Img from "../comps/image";
 import Background from "../comps/background";
 import { useRouter } from 'next/router';
+import HomeIcon from '@mui/icons-material/Home';
+import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
+import { topToBottom } from "../data/animations";
 
 const MainCont = styled.div`
   display: flex;
@@ -26,12 +29,40 @@ const VideoCont = styled.iframe`
   border-radius: 8px;
   box-shadow: 2px 2px 5px rgb(31 31 31/0.6)
 `
+const Home = styled(HomeIcon)`
+    color: #333;
+    height: 40px;
+    width: auto;
+    position: absolute;
+    margin: 15px 0px 0px 330px;
+    cursor: pointer;
+    animation: ${topToBottom} 1s;
+`
+const Back = styled(ArrowBackIosSharpIcon)`
+    position: absolute;
+    margin: 20px 320px 0px 0px;
+    height: 30px;
+    width: auto;
+    color: #333;
+    cursor: pointer;
+    animation: ${topToBottom} 1s;
+`
 
 export default function LearnMore() {
 
   const r = useRouter();
 
   return <MainCont>
+    <Home
+      onClick={
+        () => r.push("/")
+      }
+    />
+    <Back
+      onClick={
+        () => r.back("")
+      }
+    />
     <Background img="/Home_bg.svg" />
     <Img img="/learnmoreguy.svg" w="290" h="230" />
 

@@ -38,14 +38,12 @@ const Home = styled(HomeIcon)`
     color: #333;
     height: 40px;
     width: auto;
-    position: absolute;
-    margin: 15px 0px 0px 330px;
+    position: relative;
     cursor: pointer;
     animation: ${topToBottom} 1s;
 `
 const Back = styled(ArrowBackIosSharpIcon)`
-    position: absolute;
-    margin: 20px 320px 0px 0px;
+    position: relative;
     height: 30px;
     width: auto;
     color: #333;
@@ -58,6 +56,13 @@ const StoreLady = styled.div`
 const ShirtsCont = styled.div`
     overflow: hidden;
 `
+const NavBtns = styled.div`
+    width: 74vw;
+    display: flex;
+    padding: 20px 0px 0px 0px;
+    justify-content: space-between;
+    align-items: center;
+`
 
 export default function Store() {
     const r = useRouter();
@@ -66,16 +71,18 @@ export default function Store() {
     }, []);
 
     return <MainCont>
-        <Home
-            onClick={
-                () => r.push("/")
-            }
-        />
-        <Back
-            onClick={
-                () => r.back("")
-            }
-        />
+        <NavBtns>
+            <Back
+                onClick={
+                    () => r.back("")
+                }
+            />
+            <Home
+                onClick={
+                    () => r.push("/")
+                }
+            />
+        </NavBtns>
         <Background img="/Home_bg.svg" />
         <StoreLady
             data-aos="fade-down">

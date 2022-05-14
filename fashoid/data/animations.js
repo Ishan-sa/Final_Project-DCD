@@ -73,7 +73,7 @@ export const CarMovingRight = keyframes`
 `
 export const CloudsMovingLTR = keyframes`
     from{
-        right: 350px
+        right: 1850px
     }
     to{
         right: -350px;
@@ -195,8 +195,8 @@ export const topToBottomDiff = keyframes`
     }
 ` */
 export const Drop = keyframes`
-    0%   { transform: scale(1,1)      translateY(0); }
-    10%  { transform: scale(1.1,.9)   translateY(0); }
+    0%   { transform: scale(1,1)      translateY(-100vh); }
+    10%  { transform: scale(1.1,.9)   translateY(0vh); }
     30%  { transform: scale(.9,1.1)   translateY(-100px); }
     50%  { transform: scale(1.05,.95) translateY(0); }
     57%  { transform: scale(1,1)      translateY(-7px); }

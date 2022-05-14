@@ -9,6 +9,7 @@ const Introduction = styled.div`
     padding: ${props => props.pd};
     margin: ${props => props.mg};
     width: ${props => props.w}
+    font-weight :${props => props.fw}
 `
 
 export default function BodyText({
@@ -17,9 +18,10 @@ export default function BodyText({
     fontsize = "16px",
     padding = "0px 0px 0px 0px",
     margin = "0px 0px 0px 0px",
-    width = "100%"
+    width = "100%",
+    fontweight = "500"
 }) {
-    return <Introduction cl={color} sz={fontsize} pd={padding} mg={margin} w={width}>
+    return <Introduction cl={color} sz={fontsize} pd={padding} mg={margin} w={width} fw={fontweight}>
         {txt}
     </Introduction>
 }

@@ -5,6 +5,7 @@ import BodyText from "../comps/text-content";
 import { useState } from 'react';
 import { ChangeQuantity } from '../data/data'
 import HomeIcon from '@mui/icons-material/Home';
+import { topToBottom } from "../data/animations";
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 import { useEffect } from "react"
 import "aos/dist/aos.css";
@@ -66,63 +67,35 @@ const Home = styled(HomeIcon)`
     color: #333;
     height: 40px;
     width: auto;
-    position: absolute;
-    margin: 15px 0px 0px 330px;
+    position: relative;
     cursor: pointer;
+    animation: ${topToBottom} 1s;
 `
 const Back = styled(ArrowBackIosSharpIcon)`
-    position: absolute;
-    margin: 20px 320px 0px 0px;
+    position: relative;
     height: 30px;
     width: auto;
     color: #333;
     cursor: pointer;
+    animation: ${topToBottom} 1s;
 `
 const MainCont = styled.div`
     width: 100vw;
     padding: 120px 0px 120px 0px;
 `
 
-const NavCont = styled.div`
-    position: absolute;
-    bottom: 845px;
-    right: 375px;
+const NavBtns = styled.div`
+    width: 74vw;
+    display: flex;
+    padding: 20px 0px 0px 0px;
+    justify-content: space-between;
+    align-items: center;
 `
-
-const Counter = () => {
-    const r = useRouter();
-    const [count, setCount] = useState(0);
-    return (
-        <MainCont>
-            <NavCont>
-                <Home
-                    onClick={
-                        () => r.push("/")
-                    }
-                />
-                <Back
-                    onClick={
-                        () => r.back("")
-                    }
-                />
-            </NavCont>
-            <AllCounter data-aos="flip-up">
-                <DecBtn onClick={
-                    () => setCount(count - 1)}> {ChangeQuantity(count)}
-                </DecBtn>
-                <CountCont className="styles.count">{count}</CountCont>
-                <IncBtn onClick={
-                    () => setCount(count + 1)}> {ChangeQuantity(count)}
-                </IncBtn>
-            </AllCounter>
-        </MainCont>
-    )
-}
-
 
 const All_Cont = styled.div`
     display: flex;
-    justify-content: center;
+    // justify-content: center;
+    align-items: center;
     flex-direction: column;
     height: 100vh;
     width: 100vw;
@@ -143,6 +116,25 @@ const NextBtn = styled.button`
     font-family: 'Montserrat', sans-serif;
 `
 
+const Counter = () => {
+    const r = useRouter();
+    const [count, setCount] = useState(0);
+    return (
+        <MainCont>
+            <AllCounter data-aos="flip-up">
+                <DecBtn onClick={
+                    () => setCount(count - 1 < 0 ? 0 : count - 1)}> {ChangeQuantity(count)}
+                </DecBtn>
+                <CountCont className="styles.count">{count}</CountCont>
+                <IncBtn onClick={
+                    () => setCount(count + 1)}> {ChangeQuantity(count)}
+                </IncBtn>
+            </AllCounter>
+        </MainCont>
+    )
+}
+
+
 export default function QtySelect() {
     const r = useRouter();
     const { type } = r.query;
@@ -152,8 +144,22 @@ export default function QtySelect() {
 
     return <All_Cont>
         <Background img="/Home_bg.svg" />
+        <NavBtns>
+            <Back
+                onClick={
+                    () => r.back("")
+                }
+            />
+            <Home
+                onClick={
+                    () => r.push("/")
+                }
+            />
+        </NavBtns>
         <div data-aos="flip-up">
-            <BodyText txt="How many would you like to buy? (Upto 4)" fontsize="20px" />
+            <BodyText txt="How many would you like to buy? (Upto 4)" fontsize="20px"
+                padding="120px 0px 0px 0px"
+            />
         </div>
         <Counter />
         <NextBtnCont data-aos="flip-down">
@@ -165,9 +171,3 @@ export default function QtySelect() {
         </NextBtnCont>
     </All_Cont>
 }
-
-// var count = 1;
-
-// if (count === 1){
-//     console.log("working")
-// }

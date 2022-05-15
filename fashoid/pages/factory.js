@@ -5,6 +5,7 @@ import { topToBottom } from "../data/animations";
 import { useEffect } from "react"
 import "aos/dist/aos.css";
 import Aos from "aos";
+import Img from "../comps/image";
 
 const MainCont = styled.div`
     display: flex;
@@ -71,6 +72,13 @@ const NextBtn = styled.button`
 
 const SubCont = styled.div`
     padding-top: 40px;
+`
+const SkyRoadCont = styled.div`
+    display: flex;
+    // position: absolute;
+    // justfify-content: center;
+    width: 100vw;
+    position: absolute;
 `
 
 export default function Factory() {
@@ -175,9 +183,17 @@ export default function Factory() {
     // first state of the building before clicking
 
     return <MainCont>
-        <FactBackgroundDiv>
+        {/* <FactBackgroundDiv>
             <FactBackground src="/factory_bg.svg"></FactBackground>
-        </FactBackgroundDiv>
+        </FactBackgroundDiv> */}
+        <SkyRoadCont>
+            <Img
+                img="/SkyRoad.svg"
+                padding="0px 0px 0px 0px"
+                w="1500"
+                h="900"
+            />
+        </SkyRoadCont>
         <SubCont data-aos="flip-down" data-aos-duration="1000">
             <BodyText txt="Keep Clicking on the building to make your product."></BodyText>
         </SubCont>

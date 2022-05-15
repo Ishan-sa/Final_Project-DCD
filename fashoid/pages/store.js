@@ -79,7 +79,7 @@ export default function Store() {
             />
             <Home
                 onClick={
-                    () => r.push("/")
+                    () => r.push("/home")
                 }
             />
         </NavBtns>

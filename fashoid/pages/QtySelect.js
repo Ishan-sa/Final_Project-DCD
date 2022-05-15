@@ -94,7 +94,6 @@ const NavBtns = styled.div`
 
 const All_Cont = styled.div`
     display: flex;
-    // justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
@@ -152,7 +151,7 @@ export default function QtySelect() {
             />
             <Home
                 onClick={
-                    () => r.push("/")
+                    () => r.push("/home")
                 }
             />
         </NavBtns>

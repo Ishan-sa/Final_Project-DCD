@@ -160,7 +160,7 @@ export default function WwFact() {
         />
         <Home
           onClick={
-            () => r.push("/")
+            () => r.push("/home")
           }
         />
       </NavBtns>
@@ -213,7 +213,7 @@ export default function WwFact() {
         />
         <Home
           onClick={
-            () => r.push("/")
+            () => r.push("/home")
           }
         />
       </NavBtns>
@@ -265,7 +265,7 @@ export default function WwFact() {
         />
         <Home
           onClick={
-            () => r.push("/")
+            () => r.push("/home")
           }
         />
       </NavBtns>
@@ -318,7 +318,7 @@ export default function WwFact() {
         />
         <Home
           onClick={
-            () => r.push("/")
+            () => r.push("/home")
           }
         />
       </NavBtns>
@@ -372,7 +372,7 @@ export default function WwFact() {
         />
         <Home
           onClick={
-            () => r.push("/")
+            () => r.push("/home")
           }
         />
       </NavBtns>
@@ -405,7 +405,7 @@ export default function WwFact() {
         />
         <Home
           onClick={
-            () => r.push("/")
+            () => r.push("/home")
           }
         />
       </NavBtns>
@@ -439,7 +439,7 @@ export default function WwFact() {
         />
         <Home
           onClick={
-            () => r.push("/")
+            () => r.push("/home")
           }
         />
       </NavBtns>
@@ -493,7 +493,7 @@ export default function WwFact() {
         />
         <Home
           onClick={
-            () => r.push("/")
+            () => r.push("/home")
           }
         />
       </NavBtns>
@@ -542,7 +542,7 @@ export default function WwFact() {
         />
         <Home
           onClick={
-            () => r.push("/")
+            () => r.push("/home")
           }
         />
       </NavBtns>
@@ -591,7 +591,7 @@ export default function WwFact() {
         />
         <Home
           onClick={
-            () => r.push("/")
+            () => r.push("/home")
           }
         />
       </NavBtns>
@@ -641,7 +641,7 @@ export default function WwFact() {
         />
         <Home
           onClick={
-            () => r.push("/")
+            () => r.push("/home")
           }
         />
       </NavBtns>
@@ -674,7 +674,7 @@ export default function WwFact() {
         />
         <Home
           onClick={
-            () => r.push("/")
+            () => r.push("/home")
           }
         />
       </NavBtns>

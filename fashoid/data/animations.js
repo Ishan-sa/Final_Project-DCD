@@ -204,3 +204,19 @@ export const Drop = keyframes`
     100% { transform: scale(1,1)      translateY(0); }
     }
 `
+
+export const LogoSplash = keyframes`
+    from{
+        scale: 0;
+        opacity: 0;
+        rotate: 60deg;
+    }
+    80%{
+        scale: 1.2;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
+        rotate: 0deg;
+    }
+`

@@ -32,28 +32,22 @@ const FactBackgroundDiv = styled.div`
 `;
 
 const Warehouse = styled.img`
-    margin-top: 220px;
+    margin-top: 330px;
     width: 200px;
     cursor: pointer;
 `;
 
 const Warehouse2 = styled.img`
-    margin-top: 241px;
+    margin-top: 330px;
     width: 250px;
     height: 250px;
     cursor: pointer;
 `;
 
 
-const Warehouse3 = styled.img`
-    margin-top: 261px;
-    width: 250px;
-    height: 250px;
-`;
-
-
 const NextBtn = styled.button`
   background-color: #CFEDFF;
+  z-index: 999;
   width: 100px;
   height: 40px;
   border-radius: 8px;
@@ -63,8 +57,7 @@ const NextBtn = styled.button`
   padding-right: 20px;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 150px;
   background-repeat: no-repeat;
   background-position: right 20px center;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23333'/%3E%3C/svg%3E");
@@ -77,8 +70,29 @@ const SkyRoadCont = styled.div`
     display: flex;
     // position: absolute;
     // justfify-content: center;
+    flex-direction: column;
     width: 100vw;
     position: absolute;
+`
+const S1 = styled.div`
+    background: linear-gradient(#59bfff, #c4e9ff);
+    width: 100vw;
+    height: 60vh;
+`
+const S2 = styled.div`
+    background: #D9D9D9;
+    width: 100vw;
+    height: 10vh;
+`
+const S3 = styled.div`
+    background: #B2B2B2;
+    width: 100vw;
+    height: 5vh;
+`
+const S4 = styled.div`
+    background: #737375;
+    width: 100vw;
+    height: 25vh;
 `
 
 export default function Factory() {
@@ -92,9 +106,12 @@ export default function Factory() {
 
     if (page === "1") {
         return <MainCont>
-            <FactBackgroundDiv>
-                <FactBackground src="/factory_bg.svg"></FactBackground>
-            </FactBackgroundDiv>
+            <SkyRoadCont>
+                <S1></S1>
+                <S2></S2>
+                <S3></S3>
+                <S4></S4>
+            </SkyRoadCont>
             <SubCont>
                 <div data-aos="flip-down" data-aos-duration="500">
                     <BodyText txt="Oh no......." />
@@ -116,9 +133,12 @@ export default function Factory() {
 
     if (page === "2") {
         return <MainCont>
-            <FactBackgroundDiv>
-                <FactBackground src="/factory_bg.svg"></FactBackground>
-            </FactBackgroundDiv>
+            <SkyRoadCont>
+                <S1></S1>
+                <S2></S2>
+                <S3></S3>
+                <S4></S4>
+            </SkyRoadCont>
             <SubCont>
                 <div data-aos="flip-down" data-aos-duration="500">
                     <BodyText txt="It's going down!!!!!!"></BodyText>
@@ -139,9 +159,12 @@ export default function Factory() {
 
     if (page === "3") {
         return <MainCont>
-            <FactBackgroundDiv>
-                <FactBackground src="/factory_bg.svg"></FactBackground>
-            </FactBackgroundDiv>
+            <SkyRoadCont>
+                <S1></S1>
+                <S2></S2>
+                <S3></S3>
+                <S4></S4>
+            </SkyRoadCont>
             <SubCont>
                 <div data-aos="flip-down" data-aos-duration="500">
                     <BodyText txt="BOOM!!!"></BodyText>
@@ -164,9 +187,12 @@ export default function Factory() {
 
     if (page === "4") {
         return <MainCont>
-            <FactBackgroundDiv>
-                <FactBackground src="/factory_bg.svg"></FactBackground>
-            </FactBackgroundDiv>
+            <SkyRoadCont>
+                <S1></S1>
+                <S2></S2>
+                <S3></S3>
+                <S4></S4>
+            </SkyRoadCont>
             <SubCont data-aos="flip-down" data-aos-duration="500">
                 <BodyText txt={<>The <b>Rana Plaza</b> factory produced clothes for many fast fashion companies.</>}></BodyText>
                 <BodyText txt={<>The building collapsed in <b>2011</b> from poor building structure and unsafe working conditions and killed <b>1,132 people.</b></>}></BodyText>
@@ -183,16 +209,11 @@ export default function Factory() {
     // first state of the building before clicking
 
     return <MainCont>
-        {/* <FactBackgroundDiv>
-            <FactBackground src="/factory_bg.svg"></FactBackground>
-        </FactBackgroundDiv> */}
         <SkyRoadCont>
-            <Img
-                img="/SkyRoad.svg"
-                padding="0px 0px 0px 0px"
-                w="1500"
-                h="900"
-            />
+            <S1></S1>
+            <S2></S2>
+            <S3></S3>
+            <S4></S4>
         </SkyRoadCont>
         <SubCont data-aos="flip-down" data-aos-duration="1000">
             <BodyText txt="Keep Clicking on the building to make your product."></BodyText>

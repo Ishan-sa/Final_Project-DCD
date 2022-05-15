@@ -6,11 +6,11 @@ import Img from "../comps/image";
 import Image from "next/image";
 import HomeIcon from '@mui/icons-material/Home';
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
-import { fadeIn, topToBottom, CloudsMovingLTR, ContScale } from '../data/animations'
+import { fadeIn, topToBottom, CloudsMovingLTR, ContScale, CarMovingRight, CarMovingLeft } from '../data/animations'
 
 const FashoidHead = styled.div`
     position: relative;
-    padding: 0px 0px 469px 60px;
+    padding: 0px 0px 453px 15px;
     z-index: 99;
     margin: 0px 0px 0px 0px;
     position: absolute;
@@ -23,12 +23,12 @@ const FashSubHead = styled.div`
     font-size: 15px;
     position: absolute;
     z-index: 99;
-    padding: 8px 0px 417px 62px;
+    padding: 0px 0px 392px 31px;
     animation: ${topToBottom} 1s;
 `
 const EnterHere = styled.div`
     position: relative;
-    padding: 0px 0px 146px 236px;
+    padding: 0px 0px 135px 183px;
     font-size: 16px;
     position: absolute;
     z-index: 99;
@@ -38,7 +38,7 @@ const EnterHere = styled.div`
 const Cursor = styled.div`
     position: absolute;
     z-index: 199;
-    margin: 0px 0px 45px 273px;
+    margin: 0px 0px 29px 222px;
     cursor: pointer;
     animation: 1s linear ${ContScale} alternate;
     animation-iteration-count: infinite;
@@ -61,12 +61,7 @@ const HomeCont = styled.div`
     flex-direction: column;
 `
 
-const CarCont = styled.div`
-    display: flex;
-    position: absolute;
-    z-index: 99;
-    padding: 495px 0px 0px 60px;
-`
+
 const CloudsCont = styled.div`
     position: absolute;
     display: flex;
@@ -82,14 +77,70 @@ const ShopRoadCont = styled.div`
     align-items: center;
     width: 100vw;
     height: 100vh;
+    `
+const Allbg = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
 `
-const NavBtns = styled.div`
-    
+const R1 = styled.div`
+    background-color: #D9D9D9;
+    width: 100vw;
+    height: 5vh;
 `
+const R2 = styled.div`
+    background-color: #B2B2B2;
+    width: 100vw;
+    height: 10vh;
+`
+const R3 = styled.div`
+    background-color: #737375;
+    width: 100vw;
+    height: 30vh;
+`
+const RoadCont = styled.div`
+    width: 100vw;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+`
+const BlueBg = styled.div`
+    background: linear-gradient(#59bfff, #c4e9ff);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -999;
+`
+const CarCont = styled.div`
+    display: flex;
+    position: absolute;
+    z-index: 99;
+    padding: 495px 0px 0px 60px;
+`
+const Car1Cont = styled.div`
+    width: 126px;
+    height: 51px;
+    // animation: ${CarMovingRight} 4s;
+    animation-iteration-count: infinite;
+`
+const Car2Cont = styled.div`
+    width: 183px;
+    height: 52px;
+    animation: ${CarMovingLeft} 4s;
+    animation-iteration-count: infinite;
+`
+const StripsCont = styled.div`
+
+`
+
+
 export default function Start() {
     const r = useRouter();
 
     return <HomeCont>
+        <BlueBg></BlueBg>
         <Back
             onClick={
                 () => r.back("")
@@ -115,7 +166,6 @@ export default function Start() {
                 padding="0px 0px 120px 0px"
             />
         </CloudsCont>
-        <Background img="/BlueBg.svg" />
         <ShopRoadCont>
             <FashoidHead>
                 <BodyText txt="Fashoid" fontsize="23px" />
@@ -142,62 +192,33 @@ export default function Start() {
                 img="/Shop.svg"
                 w="352"
                 h="301"
-                padding="120px 0px 0px 50px"
+                padding="0px 0px 200px 0px"
             />
-            <Img
-                img="/Road.svg"
-                w="390"
-                h="336"
-                padding="0px 0px 0px 50px"
-            />
+            <Allbg>
+                <RoadCont></RoadCont>
+                <R1></R1>
+                <R2></R2>
+                <R3></R3>
+            </Allbg>
             <CarCont>
-                <Img
-                    img="/car.svg"
-                    w="126"
-                    h="51"
-                    padding="0px 0px 90px 0px"
-                    animation="CarMovingRight"
-                />
-                <Img
-                    img="/car2.svg"
-                    w="183"
-                    h="52"
-                    padding="110px 0px 0px 0px"
-                />
+                <Car1Cont>
+                    <Img
+                        img="/car.svg"
+                        w="126"
+                        h="51"
+                        padding="0px 0px 90px 0px"
+                    />
+                </Car1Cont>
+                <Car2Cont>
+                    <Img
+                        img="/car2.svg"
+                        w="183"
+                        h="52"
+                        padding="110px 0px 0px 0px"
+                    />
+                </Car2Cont>
             </CarCont>
         </ShopRoadCont>
-
-        {/* <FashoidHead>
-            <BodyText txt="Fashoid" fontsize="23px" />
-        </FashoidHead> */}
-
-        {/* <FashSubHead>
-            <BodyText
-                txt="Click on the door to proceed"
-                color="white"
-            />
-        </FashSubHead> */}
-
-        {/* <EnterHere>
-            <BodyText txt="Enter Here" />
-        </EnterHere> */}
-
-
-        {/* <CarCont>
-            <Img
-                img="/car.svg"
-                w="126"
-                h="51"
-                padding="0px 0px 90px 0px"
-                animation="CarMovingRight"
-            />
-            <Img
-                img="/car2.svg"
-                w="183"
-                h="52"
-                padding="110px 0px 0px 0px"
-            />
-        </CarCont> */}
 
 
     </HomeCont>

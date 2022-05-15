@@ -63,14 +63,7 @@ export const SlideInLeft = keyframes`
         opacity: 1;
     }
 `
-export const CarMovingRight = keyframes`
-    from{
-        margin-right: 1000px
-    }
-    to{
-        margin-right: -1000px;
-    }
-`
+
 export const CloudsMovingLTR = keyframes`
     from{
         right: 1850px
@@ -218,5 +211,13 @@ export const LogoSplash = keyframes`
         scale: 1;
         opacity: 1;
         rotate: 0deg;
+    }
+`
+export const CarMovingRight = keyframes`
+    from{
+        margin-right: 3000px
+    }
+    to{
+        margin-right: -2000px;
     }
 `

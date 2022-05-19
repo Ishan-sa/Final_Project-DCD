@@ -25,7 +25,7 @@ export default function Img({
     right = "0px",
     bottom = "0px",
     left = "0px",
-    objectfit = "fill"
+    objectfit = "fill",
 }) {
     return <AllImages p={padding} po={position}>
         <Image src={img} width={w} height={h} p={padding} m={margin} t={top} right={right} bottom={bottom} left={left} objectFit={objectfit} />

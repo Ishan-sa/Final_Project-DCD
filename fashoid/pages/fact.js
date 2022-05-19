@@ -1,10 +1,14 @@
 import Background from "../comps/background";
 import Img from "../comps/image";
 import styled from "styled-components";
-import Button from "../comps/button";
 import BodyText from "../comps/text-content";
 import { useRouter } from 'next/router';
-import { GetQuantity, GetType } from "../data/data"
+import { GetQuantity, GetType } from "../data/data";
+import { topToBottom } from "../data/animations";
+import { useEffect } from "react"
+import "aos/dist/aos.css";
+import Aos from "aos";
+import NavButtons from "../comps/navBtns";
 
 
 const MainCont = styled.div`
@@ -13,22 +17,23 @@ const MainCont = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  animation: ${topToBottom} 1s;
+`
+const ShirtsCont = styled.div`
+  display: flex;
+  flex-direction: column;
+  justidy-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 150px;
 `
 const Water2Jeans = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 90%;
+  width: 100vw;
   padding-top: 150px;
   margin-top: 80px;
-`
-
-const WaterText = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  padding-bottom: 20px;
 `
 
 const StartBtn = styled.button`
@@ -47,24 +52,72 @@ const StartBtn = styled.button`
   background-repeat: no-repeat;
   background-position: right 24px center;
   margin-top: 30px;
+  transition: 0.3s linear;
+  &:hover{
+    background-color: #55613e;
+  }
 `
 
 const H2 = styled.h2`
   text-align: center;
 `
-
-const CarCo2 = styled.div`
+const Shirts = styled.div`
   display: flex;
-  justify-content: space-equally;
-  flex-direction: row;
-  width: 100%;
-  height: auto;
+  text-align: center;
+`
+
+const TshirtLeft = styled.div`
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding-bottom: 30px;
+  justify-content: center;
+`
+const TshirtMid = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+const TshirtRight = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+const AllTshirtsCont = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex: 0.5;
+  width: 100vw;
+  justify-content: space-around;
+`
+const Leftjeans = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const MidJeans = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const RightJeans = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const AllJeansCont = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  width: 80vw;
+  justify-content: space-around;
+  align-items: center;
 `
 
 
 export default function WwFact() {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
 
   const r = useRouter();
   const gq = GetQuantity();
@@ -77,92 +130,169 @@ export default function WwFact() {
   if (gq === 1 && gt == "jeans") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <Water2Jeans>
-        <Img img="/Jean.svg" w="65" h="115" p="50px 0px 50px 0px" />
-        <Img img="/equals.svg" w="20" />
-        <Img img="/Drop.svg" w="65" h="115" p="50px 0px 50px 0px" />
-      </Water2Jeans>
+      <NavButtons />
 
-      <WaterText>
-        <BodyText padding="0px 0px 0px 12px" txt={<>
-          {gq} pair of jeans
-        </>} />
-        <BodyText txt="7,500 Litres" />
-      </WaterText>
+      <AllJeansCont data-aos="flip-down">
+        <Leftjeans>
+          <Img
+            img="/Jean.svg"
+            w="65" h="115"
+            padding="0px 0px 0px 0px"
+          />
+          <BodyText padding="0px 0px 0px 12px" txt={<>
+            {gq} pair of jeans
+          </>} />
+        </Leftjeans>
 
+        <MidJeans>
+          <Img
+            img="/equals.svg" w="20"
+          />
+        </MidJeans>
 
-      <StartBtn onClick={
-        () => r.push("/factory")
-      }>Make Jeans</StartBtn>
+        <RightJeans>
+          <Img
+            img="/Drop.svg"
+            w="65" h="115"
+            padding="0px 0px 0px 0px"
+          />
+          <BodyText txt="7,500 Litres" />
+        </RightJeans>
+      </AllJeansCont>
+
+      <div data-aos="slide-right">
+        <StartBtn
+          onClick={
+            () => r.push("/factory")
+          }>Make Jeans</StartBtn>
+      </div>
     </MainCont>
   }
 
   if (gq === 2 && gt == "jeans") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <Water2Jeans>
-        <Img img="/Jean.svg" w="65" h="115" p="50px 0px 50px 0px" />
-        <Img img="/equals.svg" w="20" />
-        <Img img="/Drop.svg" w="65" h="115" p="50px 0px 50px 0px" />
-      </Water2Jeans>
+      <NavButtons />
+      <AllJeansCont data-aos="flip-down">
+        <Leftjeans>
+          <Img
+            img="/Jean.svg"
+            w="65" h="115"
+            padding="0px 0px 0px 0px"
+          />
+          <BodyText padding="0px 0px 0px 12px" txt={<>
+            {gq} pair of jeans
+          </>} />
+        </Leftjeans>
 
-      <WaterText>
-        <BodyText padding="0px 0px 0px 12px" txt={<>
-          {gq} pair of jeans
-        </>} />
-        <BodyText txt="15,000 Litres" />
-      </WaterText>
+        <MidJeans>
+          <Img
+            img="/equals.svg" w="20"
+          />
+        </MidJeans>
+
+        <RightJeans>
+          <Img
+            img="/Drop.svg"
+            w="65" h="115"
+            padding="0px 0px 0px 0px"
+          />
+          <BodyText txt="15,000 Litres" />
+        </RightJeans>
+      </AllJeansCont>
 
 
-      <StartBtn onClick={
-        () => r.push("/factory")
-      }>Make Jeans</StartBtn>
+      <div data-aos="slide-right">
+        <StartBtn
+          onClick={
+            () => r.push("/factory")
+          }>Make Jeans</StartBtn>
+      </div>
     </MainCont>
   }
 
   if (gq === 3 && gt == "jeans") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <Water2Jeans>
-        <Img img="/Jean.svg" w="65" h="115" p="50px 0px 50px 0px" />
-        <Img img="/equals.svg" w="20" />
-        <Img img="/Drop.svg" w="65" h="115" p="50px 0px 50px 0px" />
-      </Water2Jeans>
+      <NavButtons />
 
-      <WaterText>
-        <BodyText padding="0px 0px 0px 12px" txt={<>
-          {gq} pair of jeans
-        </>} />
-        <BodyText txt="22,500 Litres" />
-      </WaterText>
+      <AllJeansCont data-aos="flip-down">
+        <Leftjeans>
+          <Img
+            img="/Jean.svg"
+            w="65" h="115"
+            padding="0px 0px 0px 0px"
+          />
+          <BodyText padding="0px 0px 0px 12px" txt={<>
+            {gq} pair of jeans
+          </>} />
+        </Leftjeans>
+
+        <MidJeans>
+          <Img
+            img="/equals.svg" w="20"
+          />
+        </MidJeans>
+
+        <RightJeans>
+          <Img
+            img="/Drop.svg"
+            w="65" h="115"
+            padding="0px 0px 0px 0px"
+          />
+          <BodyText txt="22,500 Litres" />
+        </RightJeans>
+      </AllJeansCont>
 
 
-      <StartBtn onClick={
-        () => r.push("/factory")
-      }>Make Jeans</StartBtn>
+      <div data-aos="slide-right">
+        <StartBtn
+          onClick={
+            () => r.push("/factory")
+          }>Make Jeans</StartBtn>
+      </div>
     </MainCont>
   }
 
   if (gq === 4 && gt == "jeans") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <Water2Jeans>
-        <Img img="/Jean.svg" w="65" h="115" p="50px 0px 50px 0px" />
-        <Img img="/equals.svg" w="20" />
-        <Img img="/Drop.svg" w="65" h="115" p="50px 0px 50px 0px" />
-      </Water2Jeans>
+      <NavButtons />
+      <AllJeansCont data-aos="flip-down">
+        <Leftjeans>
+          <Img
+            img="/Jean.svg"
+            w="65" h="115"
+            padding="0px 0px 0px 0px"
+          />
+          <BodyText padding="0px 0px 0px 12px" txt={<>
+            {gq} pair of jeans
+          </>} />
+        </Leftjeans>
 
-      <WaterText>
-        <BodyText padding="0px 0px 0px 12px" txt={<>
-          {gq} pair of jeans
-        </>} />
-        <BodyText txt="30,000 Litres" />
-      </WaterText>
+        <MidJeans>
+          <Img
+            img="/equals.svg" w="20"
+          />
+        </MidJeans>
+
+        <RightJeans>
+          <Img
+            img="/Drop.svg"
+            w="65" h="115"
+            padding="0px 0px 0px 0px"
+          />
+          <BodyText txt="30,000 Litres" />
+        </RightJeans>
+      </AllJeansCont>
 
 
-      <StartBtn onClick={
-        () => r.push("/factory")
-      }>Make Jeans</StartBtn>
+      <div data-aos="slide-right">
+        <StartBtn
+          onClick={
+            () => r.push("/factory")
+          }>Make Jeans</StartBtn>
+      </div>
     </MainCont>
   }
 
@@ -171,14 +301,21 @@ export default function WwFact() {
   if (gq > 4 && gt == "jeans") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <Img img="/bruhgirl.svg" w="250" h="250" p="50px 0px 50px 0px" />
-      <H2> What!? <br /> You want {gq} pairs?</H2>
-      <BodyText txt="We only have 4 in stock" />
+      <NavButtons />
+      <div data-aos="zoom-out">
+        <Img img="/bruhgirl.svg" w="250" h="250" p="50px 0px 50px 0px" />
+      </div>
+      <H2 data-aos="slide-right"> What!? <br /> You want {gq} pairs?</H2>
+      <div data-aos="slide-left">
+        <BodyText txt="We only have 4 in stock" />
+      </div>
 
 
-      <StartBtn onClick={
-        () => r.push("/QtySelect")
-      }>Try Again</StartBtn>
+      <StartBtn
+        data-aos="slide-right"
+        onClick={
+          () => r.push("/QtySelect")
+        }>Try Again</StartBtn>
     </MainCont>
   }
 
@@ -186,140 +323,181 @@ export default function WwFact() {
 
   if (gq <= 0 && gt == "jeans") {
     return <MainCont>
+      <NavButtons />
       <Background img="/Home_bg.svg" />
-      <Img img="/bruhgirl.svg" w="250" h="250" p="50px 0px 50px 0px" />
-      <H2>{gq} pairs!? <br /> You are very eco-friendly</H2>
-      <BodyText txt="They are literally free, just get some." />
-      <StartBtn onClick={
-        () => r.push("/QtySelect")
-      }>Try Again</StartBtn>
+      <div data-aos="zoom-out">
+        <Img img="/bruhgirl.svg" w="250" h="250" p="50px 0px 50px 0px" />
+      </div>
+      <H2 data-aos="slide-right">{gq} pairs!? <br /> You are very eco-friendly</H2>
+      <div data-aos="slide-left">
+        <BodyText txt="They are literally free, just get some." />
+      </div>
+      <div data-aos="slide-left">
+        <StartBtn
+          onClick={
+            () => r.push("/QtySelect")
+          }>Try Again</StartBtn>
+      </div>
     </MainCont>
   }
-///////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////// for shirts
-//////////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////////
+  /////////////// for shirts
+  //////////////////////////////////////////////////////////////////////////////////////////////////
 
   if (gq === 1 && gt == "shirts") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <Water2Jeans>
-        <Img img="/tshirt.svg" w="90" h="115" />
-        <Img img="/equals.svg" w="20" />
-        <Img img="/Drop.svg" w="65" h="115" />
-      </Water2Jeans>
+      <NavButtons />
 
-      <WaterText>
-        <BodyText padding="0px 0px 0px 12px" txt={<>
-          {gq} T-Shirt
-        </>} />
-        <BodyText margin="0px 0px 0px 100px" txt="7000 Litres" />
-      </WaterText>
+      <AllTshirtsCont data-aos="flip-down">
+        <TshirtLeft>
+          <Img img="/tshirt.svg" padding="0px 0px 10px 0px" />
+          <BodyText padding="0px 0px 40px 0px" txt={<>
+            {gq} T-Shirt
+          </>} />
+          <BodyText txt="2.6 kg of CO2" padding="30px 0px 0px 0px" />
+        </TshirtLeft>
 
-      <CarCo2>
-        <BodyText width="50%" txt="2.6 kg of CO2" />
-        <Img img="/equals.svg" w="20" padding="0px 0px 0px 0px" margin="0px 0px 0px 0px" />
-        <Img img="/carco2.svg" w="100" h="90" padding="0px 0px 0px 50px" margin="0px 0px 0px 0px" />
-      </CarCo2>
+        <TshirtMid>
+          <Img img="/equals.svg" w="20" padding="50px 0px 0px 0px" />
+          <Img img="/equals.svg" w="20" padding="50px 0px 0px 0px" />
+        </TshirtMid>
 
-      <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 14km in a standard vehicle" />
+        <TshirtRight>
+          <Img img="/Drop.svg" padding="20px 0px 10px 0px" />
+          <BodyText txt="7000 Litres" padding="0px 0px 30px 0px" />
+          <Img img="/carco2.svg" w="100" h="90" padding="0px 0px 0px 0px" />
+        </TshirtRight>
+      </AllTshirtsCont>
 
 
-      <StartBtn onClick={
-        () => r.push("/factory")
-      }>Make T-shirt</StartBtn>
+      <div data-aos="slide-left">
+        <BodyText
+          padding="0px 15px 0px 15px"
+          txt="Equivalent to driving 14km in a standard vehicle"
+        />
+      </div>
+
+
+      <StartBtn
+        data-aos="slide-right"
+        onClick={
+          () => r.push("/factory")
+        }>Make T-shirt</StartBtn>
     </MainCont>
   }
 
   if (gq === 2 && gt == "shirts") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <Water2Jeans>
-        <Img img="/tshirt.svg" w="90" h="115" />
-        <Img img="/equals.svg" w="20" />
-        <Img img="/Drop.svg" w="65" h="115" />
-      </Water2Jeans>
+      <NavButtons />
+      <AllTshirtsCont data-aos="flip-down">
+        <TshirtLeft>
+          <Img img="/tshirt.svg" padding="0px 0px 10px 0px" />
+          <BodyText padding="0px 0px 40px 0px" txt={<>
+            {gq} T-Shirts
+          </>} />
+          <BodyText txt="5.2 kg of CO2" padding="30px 0px 0px 0px" />
+        </TshirtLeft>
 
-      <WaterText>
-        <BodyText padding="0px 0px 0px 12px" txt={<>
-          {gq} T-Shirts
-        </>} />
-        <BodyText margin="0px 0px 0px 100px" txt="14,000 Litres" />
-      </WaterText>
+        <TshirtMid>
+          <Img img="/equals.svg" w="20" padding="50px 0px 0px 0px" />
+          <Img img="/equals.svg" w="20" padding="50px 0px 0px 0px" />
+        </TshirtMid>
 
-      <CarCo2>
-        <BodyText width="50%" txt="5.2 kg of CO2" />
-        <Img img="/equals.svg" w="20" padding="0px 0px 0px 0px" margin="0px 0px 0px 0px" />
-        <Img img="/carco2.svg" w="100" h="90" padding="0px 0px 0px 50px" margin="0px 0px 0px 0px" />
-      </CarCo2>
+        <TshirtRight>
+          <Img img="/Drop.svg" padding="20px 0px 10px 0px" />
+          <BodyText txt="14,000 Litres" padding="0px 0px 30px 0px" />
+          <Img img="/carco2.svg" w="100" h="90" padding="0px 0px 0px 0px" />
+        </TshirtRight>
+      </AllTshirtsCont>
 
-      <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 28km in a standard vehicle" />
+      <div data-aos="slide-left">
+        <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 28km in a standard vehicle" />
+      </div>
 
 
-      <StartBtn onClick={
-        () => r.push("/factory")
-      }>Make T-shirt</StartBtn>
+      <StartBtn
+        data-aos="slide-right"
+        onClick={
+          () => r.push("/factory")
+        }>Make T-shirt</StartBtn>
     </MainCont>
   }
 
   if (gq === 3 && gt == "shirts") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <Water2Jeans>
-        <Img img="/tshirt.svg" w="90" h="115" />
-        <Img img="/equals.svg" w="20" />
-        <Img img="/Drop.svg" w="65" h="115" />
-      </Water2Jeans>
+      <NavButtons />
+      <AllTshirtsCont data-aos="flip-down">
+        <TshirtLeft>
+          <Img img="/tshirt.svg" padding="0px 0px 10px 0px" />
+          <BodyText padding="0px 0px 40px 0px" txt={<>
+            {gq} T-Shirts
+          </>} />
+          <BodyText txt="7.8 kg of CO2" padding="30px 0px 0px 0px" />
+        </TshirtLeft>
 
-      <WaterText>
-        <BodyText padding="0px 0px 0px 12px" txt={<>
-          {gq} T-Shirts
-        </>} />
-        <BodyText margin="0px 0px 0px 100px" txt="21,000 Litres" />
-      </WaterText>
+        <TshirtMid>
+          <Img img="/equals.svg" w="20" padding="50px 0px 0px 0px" />
+          <Img img="/equals.svg" w="20" padding="50px 0px 0px 0px" />
+        </TshirtMid>
 
-      <CarCo2>
-        <BodyText width="50%" txt="7.8 kg of CO2" />
-        <Img img="/equals.svg" w="20" padding="0px 0px 0px 0px" margin="0px 0px 0px 0px" />
-        <Img img="/carco2.svg" w="100" h="90" padding="0px 0px 0px 50px" margin="0px 0px 0px 0px" />
-      </CarCo2>
+        <TshirtRight>
+          <Img img="/Drop.svg" padding="20px 0px 10px 0px" />
+          <BodyText txt="21,000 Litres" padding="0px 0px 30px 0px" />
+          <Img img="/carco2.svg" w="100" h="90" padding="0px 0px 0px 0px" />
+        </TshirtRight>
+      </AllTshirtsCont>
 
-      <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 42km in a standard vehicle" />
+      <div data-aos="slide-left">
+        <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 42km in a standard vehicle" />
+      </div>
 
 
-      <StartBtn onClick={
-        () => r.push("/factory")
-      }>Make T-shirt</StartBtn>
+      <StartBtn
+        data-aos="slide-right"
+        onClick={
+          () => r.push("/factory")
+        }>Make T-shirt</StartBtn>
     </MainCont>
   }
 
   if (gq === 4 && gt == "shirts") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <Water2Jeans>
-        <Img img="/tshirt.svg" w="90" h="115" />
-        <Img img="/equals.svg" w="20" />
-        <Img img="/Drop.svg" w="65" h="115" />
-      </Water2Jeans>
+      <NavButtons />
+      <AllTshirtsCont data-aos="flip-down">
+        <TshirtLeft>
+          <Img img="/tshirt.svg" padding="0px 0px 10px 0px" />
+          <BodyText padding="0px 0px 40px 0px" txt={<>
+            {gq} T-Shirts
+          </>} />
+          <BodyText txt="10.4 kg of CO2" padding="30px 0px 0px 0px" />
+        </TshirtLeft>
 
-      <WaterText>
-        <BodyText padding="0px 0px 0px 12px" txt={<>
-          {gq} T-Shirts
-        </>} />
-        <BodyText margin="0px 0px 0px 100px" txt="28,000 Litres" />
-      </WaterText>
+        <TshirtMid>
+          <Img img="/equals.svg" w="20" padding="50px 0px 0px 0px" />
+          <Img img="/equals.svg" w="20" padding="50px 0px 0px 0px" />
+        </TshirtMid>
 
-      <CarCo2>
-        <BodyText width="50%" txt="10.4 kg of CO2" />
-        <Img img="/equals.svg" w="20" padding="0px 0px 0px 0px" margin="0px 0px 0px 0px" />
-        <Img img="/carco2.svg" w="100" h="90" padding="0px 0px 0px 50px" margin="0px 0px 0px 0px" />
-      </CarCo2>
+        <TshirtRight>
+          <Img img="/Drop.svg" padding="20px 0px 10px 0px" />
+          <BodyText txt="28,000 Litres" padding="0px 0px 30px 0px" />
+          <Img img="/carco2.svg" w="100" h="90" padding="0px 0px 0px 0px" />
+        </TshirtRight>
+      </AllTshirtsCont>
 
-      <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 56km in a standard vehicle." />
+      <div data-aos="slide-left">
+        <BodyText padding="0px 15px 0px 15px" txt="Equivalent to driving 56km in a standard vehicle." />
+      </div>
 
 
-      <StartBtn onClick={
-        () => r.push("/factory")
-      }>Make T-shirt</StartBtn>
+      <StartBtn
+        data-aos="slide-right"
+        onClick={
+          () => r.push("/factory")
+        }>Make T-shirt</StartBtn>
     </MainCont>
   }
 
@@ -327,17 +505,23 @@ export default function WwFact() {
 
   if (gq > 4 && gt == "shirts") {
     return <MainCont>
+      <NavButtons />
       <Background img="/Home_bg.svg" />
-      <Water2Jeans>
+      <Water2Jeans data-aos="zoom-out">
         <Img img="/bruhgirl.svg" w="250" h="250" />
       </Water2Jeans>
-      <h2> What!? you want {gq} shirts?</h2>
-      <BodyText txt="we only have 4 in stock" />
+      <h2 data-aos="slide-left"> What!? You want {gq} shirts?</h2>
+      <div data-aos="slide-right">
+        <BodyText txt="We only have 4 in stock" />
+      </div>
 
 
-      <StartBtn onClick={
-        () => r.push("/QtySelect")
-      }>Try Again</StartBtn>
+      <div data-aos="slide-left">
+        <StartBtn
+          onClick={
+            () => r.push("/QtySelect")
+          }>Try Again</StartBtn>
+      </div>
     </MainCont>
   }
 
@@ -345,15 +529,25 @@ export default function WwFact() {
 
   if (gq <= 0 && gt == "shirts") {
     return <MainCont>
+      <NavButtons />
       <Background img="/Home_bg.svg" />
-      <Water2Jeans>
-        <Img img="/bruhgirl.svg" w="250" h="250" />
-      </Water2Jeans>
-      <h2>{gq} shirts!? You are very eco-friendly</h2>
-      <BodyText txt="they are literally free just get some" />
-      <StartBtn onClick={
-        () => r.push("/QtySelect")
-      }>Try Again</StartBtn>
+      <ShirtsCont>
+        <Water2Jeans data-aos="zoom-out">
+          <Img img="/bruhgirl.svg" w="250" h="250" />
+        </Water2Jeans>
+        <Shirts>
+          <h2 data-aos="slide-left">{gq} Shirts!? You are very eco-friendly</h2>
+        </Shirts>
+        <div data-aos="slide-right">
+          <BodyText txt="They are literally free just get some" />
+        </div>
+        <div data-aos="slide-left">
+          <StartBtn
+            onClick={
+              () => r.push("/QtySelect")
+            }>Try Again</StartBtn>
+        </div>
+      </ShirtsCont>
     </MainCont>
   }
 }

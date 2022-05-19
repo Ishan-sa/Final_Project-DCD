@@ -1,16 +1,14 @@
 import Background from "../comps/background";
 import Img from "../comps/image";
 import styled from "styled-components";
-import Button from "../comps/button";
 import BodyText from "../comps/text-content";
 import { useRouter } from 'next/router';
 import { GetQuantity, GetType } from "../data/data";
-import HomeIcon from '@mui/icons-material/Home';
-import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 import { topToBottom } from "../data/animations";
 import { useEffect } from "react"
 import "aos/dist/aos.css";
 import Aos from "aos";
+import NavButtons from "../comps/navBtns";
 
 
 const MainCont = styled.div`
@@ -38,7 +36,6 @@ const Water2Jeans = styled.div`
   margin-top: 80px;
 `
 
-
 const StartBtn = styled.button`
   background-color: #96A96F;
   width: 276px;
@@ -55,39 +52,20 @@ const StartBtn = styled.button`
   background-repeat: no-repeat;
   background-position: right 24px center;
   margin-top: 30px;
+  transition: 0.3s linear;
+  &:hover{
+    background-color: #55613e;
+  }
 `
 
 const H2 = styled.h2`
   text-align: center;
 `
-const Home = styled(HomeIcon)`
-  color: #333;
-  height: 40px;
-  width: auto;
-  position: relative;
-  cursor: pointer;
-  animation: ${topToBottom} 1s;
-`
-const Back = styled(ArrowBackIosSharpIcon)`
-  position: relative;
-  height: 30px;
-  width: auto;
-  color: #333;
-  cursor: pointer;
-  animation: ${topToBottom} 1s;
-`
 const Shirts = styled.div`
   display: flex;
   text-align: center;
 `
-const NavBtns = styled.div`
-  width: 74vw;
-  display: flex;
-  padding: 20px 0px 0px 0px;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 999;
-`
+
 const TshirtLeft = styled.div`
   display: flex;
   flex-direction: column;
@@ -152,18 +130,7 @@ export default function WwFact() {
   if (gq === 1 && gt == "jeans") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <NavBtns>
-        <Back
-          onClick={
-            () => r.back("")
-          }
-        />
-        <Home
-          onClick={
-            () => r.push("/home")
-          }
-        />
-      </NavBtns>
+      <NavButtons />
 
       <AllJeansCont data-aos="flip-down">
         <Leftjeans>
@@ -193,30 +160,19 @@ export default function WwFact() {
         </RightJeans>
       </AllJeansCont>
 
-
-      <StartBtn
-        data-aos="slide-right"
-        onClick={
-          () => r.push("/factory")
-        }>Make Jeans</StartBtn>
+      <div data-aos="slide-right">
+        <StartBtn
+          onClick={
+            () => r.push("/factory")
+          }>Make Jeans</StartBtn>
+      </div>
     </MainCont>
   }
 
   if (gq === 2 && gt == "jeans") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <NavBtns>
-        <Back
-          onClick={
-            () => r.back("")
-          }
-        />
-        <Home
-          onClick={
-            () => r.push("/home")
-          }
-        />
-      </NavBtns>
+      <NavButtons />
       <AllJeansCont data-aos="flip-down">
         <Leftjeans>
           <Img
@@ -246,29 +202,19 @@ export default function WwFact() {
       </AllJeansCont>
 
 
-      <StartBtn
-        data-aos="slide-right"
-        onClick={
-          () => r.push("/factory")
-        }>Make Jeans</StartBtn>
+      <div data-aos="slide-right">
+        <StartBtn
+          onClick={
+            () => r.push("/factory")
+          }>Make Jeans</StartBtn>
+      </div>
     </MainCont>
   }
 
   if (gq === 3 && gt == "jeans") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <NavBtns>
-        <Back
-          onClick={
-            () => r.back("")
-          }
-        />
-        <Home
-          onClick={
-            () => r.push("/home")
-          }
-        />
-      </NavBtns>
+      <NavButtons />
 
       <AllJeansCont data-aos="flip-down">
         <Leftjeans>
@@ -299,29 +245,19 @@ export default function WwFact() {
       </AllJeansCont>
 
 
-      <StartBtn
-        data-aos="slide-right"
-        onClick={
-          () => r.push("/factory")
-        }>Make Jeans</StartBtn>
+      <div data-aos="slide-right">
+        <StartBtn
+          onClick={
+            () => r.push("/factory")
+          }>Make Jeans</StartBtn>
+      </div>
     </MainCont>
   }
 
   if (gq === 4 && gt == "jeans") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <NavBtns>
-        <Back
-          onClick={
-            () => r.back("")
-          }
-        />
-        <Home
-          onClick={
-            () => r.push("/home")
-          }
-        />
-      </NavBtns>
+      <NavButtons />
       <AllJeansCont data-aos="flip-down">
         <Leftjeans>
           <Img
@@ -351,11 +287,12 @@ export default function WwFact() {
       </AllJeansCont>
 
 
-      <StartBtn
-        data-aos="slide-right"
-        onClick={
-          () => r.push("/factory")
-        }>Make Jeans</StartBtn>
+      <div data-aos="slide-right">
+        <StartBtn
+          onClick={
+            () => r.push("/factory")
+          }>Make Jeans</StartBtn>
+      </div>
     </MainCont>
   }
 
@@ -364,18 +301,7 @@ export default function WwFact() {
   if (gq > 4 && gt == "jeans") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <NavBtns>
-        <Back
-          onClick={
-            () => r.back("")
-          }
-        />
-        <Home
-          onClick={
-            () => r.push("/home")
-          }
-        />
-      </NavBtns>
+      <NavButtons />
       <div data-aos="zoom-out">
         <Img img="/bruhgirl.svg" w="250" h="250" p="50px 0px 50px 0px" />
       </div>
@@ -397,18 +323,7 @@ export default function WwFact() {
 
   if (gq <= 0 && gt == "jeans") {
     return <MainCont>
-      <NavBtns>
-        <Back
-          onClick={
-            () => r.back("")
-          }
-        />
-        <Home
-          onClick={
-            () => r.push("/home")
-          }
-        />
-      </NavBtns>
+      <NavButtons />
       <Background img="/Home_bg.svg" />
       <div data-aos="zoom-out">
         <Img img="/bruhgirl.svg" w="250" h="250" p="50px 0px 50px 0px" />
@@ -417,11 +332,12 @@ export default function WwFact() {
       <div data-aos="slide-left">
         <BodyText txt="They are literally free, just get some." />
       </div>
-      <StartBtn
-        data-aos="slide-right"
-        onClick={
-          () => r.push("/QtySelect")
-        }>Try Again</StartBtn>
+      <div data-aos="slide-left">
+        <StartBtn
+          onClick={
+            () => r.push("/QtySelect")
+          }>Try Again</StartBtn>
+      </div>
     </MainCont>
   }
   ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -431,18 +347,7 @@ export default function WwFact() {
   if (gq === 1 && gt == "shirts") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <NavBtns>
-        <Back
-          onClick={
-            () => r.back("")
-          }
-        />
-        <Home
-          onClick={
-            () => r.push("/home")
-          }
-        />
-      </NavBtns>
+      <NavButtons />
 
       <AllTshirtsCont data-aos="flip-down">
         <TshirtLeft>
@@ -485,18 +390,7 @@ export default function WwFact() {
   if (gq === 2 && gt == "shirts") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <NavBtns>
-        <Back
-          onClick={
-            () => r.back("")
-          }
-        />
-        <Home
-          onClick={
-            () => r.push("/home")
-          }
-        />
-      </NavBtns>
+      <NavButtons />
       <AllTshirtsCont data-aos="flip-down">
         <TshirtLeft>
           <Img img="/tshirt.svg" padding="0px 0px 10px 0px" />
@@ -534,18 +428,7 @@ export default function WwFact() {
   if (gq === 3 && gt == "shirts") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <NavBtns>
-        <Back
-          onClick={
-            () => r.back("")
-          }
-        />
-        <Home
-          onClick={
-            () => r.push("/home")
-          }
-        />
-      </NavBtns>
+      <NavButtons />
       <AllTshirtsCont data-aos="flip-down">
         <TshirtLeft>
           <Img img="/tshirt.svg" padding="0px 0px 10px 0px" />
@@ -583,18 +466,7 @@ export default function WwFact() {
   if (gq === 4 && gt == "shirts") {
     return <MainCont>
       <Background img="/Home_bg.svg" />
-      <NavBtns>
-        <Back
-          onClick={
-            () => r.back("")
-          }
-        />
-        <Home
-          onClick={
-            () => r.push("/home")
-          }
-        />
-      </NavBtns>
+      <NavButtons />
       <AllTshirtsCont data-aos="flip-down">
         <TshirtLeft>
           <Img img="/tshirt.svg" padding="0px 0px 10px 0px" />
@@ -633,18 +505,7 @@ export default function WwFact() {
 
   if (gq > 4 && gt == "shirts") {
     return <MainCont>
-      <NavBtns>
-        <Back
-          onClick={
-            () => r.back("")
-          }
-        />
-        <Home
-          onClick={
-            () => r.push("/home")
-          }
-        />
-      </NavBtns>
+      <NavButtons />
       <Background img="/Home_bg.svg" />
       <Water2Jeans data-aos="zoom-out">
         <Img img="/bruhgirl.svg" w="250" h="250" />
@@ -655,10 +516,12 @@ export default function WwFact() {
       </div>
 
 
-      <StartBtn
-        onClick={
-          () => r.push("/QtySelect")
-        }>Try Again</StartBtn>
+      <div data-aos="slide-left">
+        <StartBtn
+          onClick={
+            () => r.push("/QtySelect")
+          }>Try Again</StartBtn>
+      </div>
     </MainCont>
   }
 
@@ -666,18 +529,7 @@ export default function WwFact() {
 
   if (gq <= 0 && gt == "shirts") {
     return <MainCont>
-      <NavBtns>
-        <Back
-          onClick={
-            () => r.back("")
-          }
-        />
-        <Home
-          onClick={
-            () => r.push("/home")
-          }
-        />
-      </NavBtns>
+      <NavButtons />
       <Background img="/Home_bg.svg" />
       <ShirtsCont>
         <Water2Jeans data-aos="zoom-out">
@@ -689,11 +541,12 @@ export default function WwFact() {
         <div data-aos="slide-right">
           <BodyText txt="They are literally free just get some" />
         </div>
-        <StartBtn
-          data-aos="slide-left"
-          onClick={
-            () => r.push("/QtySelect")
-          }>Try Again</StartBtn>
+        <div data-aos="slide-left">
+          <StartBtn
+            onClick={
+              () => r.push("/QtySelect")
+            }>Try Again</StartBtn>
+        </div>
       </ShirtsCont>
     </MainCont>
   }

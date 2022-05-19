@@ -2,10 +2,8 @@ import styled from "styled-components";
 import Img from "../comps/image";
 import Background from "../comps/background";
 import { useRouter } from 'next/router';
-import HomeIcon from '@mui/icons-material/Home';
-import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
-import { topToBottom, SlideRightDiff, Drop } from "../data/animations";
-import { Slide } from "@mui/material";
+import { SlideRightDiff, Drop } from "../data/animations";
+import NavButtons from "../comps/navBtns";
 
 const MainCont = styled.div`
   display: flex;
@@ -34,50 +32,16 @@ const VideoCont = styled.iframe`
 const LearnMoreCont = styled.div`
   animation: ${SlideRightDiff} 1.5s;
 `
-const NavBtns = styled.div`
-  width: 74vw;
-  display: flex;
-  padding: 20px 0px 0px 0px;
-  justify-content: space-between;
-  align-items: center;
-`
-const Home = styled(HomeIcon)`
-    color: #333;
-    height: 40px;
-    width: auto;
-    position: relative;
-    cursor: pointer;
-    animation: ${topToBottom} 1s;
-`
-const Back = styled(ArrowBackIosSharpIcon)`
-    position: relative;
-    height: 30px;
-    width: auto;
-    color: #333;
-    cursor: pointer;
-    animation: ${topToBottom} 1s;
-`
 
 export default function LearnMore() {
 
   const r = useRouter();
 
   return <MainCont>
-    <NavBtns>
-      <Back
-        onClick={
-          () => r.back("")
-        }
-      />
-      <Home
-        onClick={
-          () => r.push("/home")
-        }
-      />
-    </NavBtns>
+    <NavButtons />
     <Background img="/Home_bg.svg" />
     <LearnMoreCont>
-      <Img img="/learnmoreguy.svg" w="290" h="230" />
+      <Img img="/learnmoreguy.svg" w="290" h="230" padding="0px 0px 0px 0px" />
     </LearnMoreCont>
 
     <VideoCont width="560" height="315" src="https://www.youtube.com/embed/fR7bXsoNwwE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></VideoCont>

@@ -5,7 +5,6 @@ import { topToBottom } from "../data/animations";
 import { useEffect } from "react"
 import "aos/dist/aos.css";
 import Aos from "aos";
-import Img from "../comps/image";
 
 const MainCont = styled.div`
     display: flex;
@@ -13,22 +12,6 @@ const MainCont = styled.div`
     align-items: center;
     width: 100vw;
     height: 100vh;
-`;
-
-const FactBackground = styled.img`
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-`;
-
-const FactBackgroundDiv = styled.div`
-    z-index: -999;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    z-index: -999;
 `;
 
 const Warehouse = styled.img`
@@ -43,7 +26,6 @@ const Warehouse2 = styled.img`
     height: 250px;
     cursor: pointer;
 `;
-
 
 const NextBtn = styled.button`
   background-color: #CFEDFF;
@@ -61,6 +43,10 @@ const NextBtn = styled.button`
   background-repeat: no-repeat;
   background-position: right 20px center;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23333'/%3E%3C/svg%3E");
+  transition: background-color 0.3s linear;
+  &:hover{
+      background-color: #7dcdff;
+  }
 `
 
 const SubCont = styled.div`
@@ -68,8 +54,6 @@ const SubCont = styled.div`
 `
 const SkyRoadCont = styled.div`
     display: flex;
-    // position: absolute;
-    // justfify-content: center;
     flex-direction: column;
     width: 100vw;
     position: absolute;
@@ -117,7 +101,7 @@ export default function Factory() {
                     <BodyText txt="Oh no......." />
                 </div>
                 <Warehouse
-                    data-aos="flip-down" data-aos-duration="1000"
+                    data-aos="slide-down" data-aos-duration="1000"
                     src="/factory2.svg" onClick={
                         () => r.replace({
                             pathname: "/factory",
@@ -145,7 +129,7 @@ export default function Factory() {
                 </div>
             </SubCont>
             <Warehouse
-                data-aos="flip-down" data-aos-duration="1000"
+                data-aos="slide-down" data-aos-duration="1000"
                 src="/factory3.svg" onClick={
                     () => r.replace({
                         pathname: "/factory",
@@ -171,7 +155,7 @@ export default function Factory() {
                 </div>
             </SubCont>
             <Warehouse2
-                data-aos="flip-down" data-aos-duration="1000"
+                data-aos="slide-down" data-aos-duration="1000"
                 src="/factory4.svg" onClick={
                     () => r.replace({
                         pathname: "/factory",
@@ -198,7 +182,7 @@ export default function Factory() {
                 <BodyText txt={<>The building collapsed in <b>2011</b> from poor building structure and unsafe working conditions and killed <b>1,132 people.</b></>}></BodyText>
             </SubCont>
             <Warehouse2
-                data-aos="flip-down" data-aos-duration="1000"
+                data-aos="slide-down" data-aos-duration="1000"
                 src="/factory5.svg" />
             <NextBtn onClick={
                 () => r.push("/Quiz")

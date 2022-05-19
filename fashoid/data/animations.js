@@ -155,38 +155,6 @@ export const topToBottomDiff = keyframes`
         bottom: 0px;
     }
 `
-
-/* export const Drop = keyframes`
-    from{
-        position: relative;
-        bottom: 1000px;
-        scale: 0.3;
-        rotate: -45deg;
-    }
-    25%{
-        position: relative;
-        bottom: 10px;
-        scale: 0.5;
-        rotate: 45deg;
-    }
-    50%{
-        position: relative;
-        bottom: 20px;
-        scale: 0.3;
-        rotate: 60deg;
-    }
-    75%{
-        position: relative;
-        bottom: 10px;
-        scale: 0.8;
-        rotate: 90deg;
-    }
-    to{
-        position: relative;
-        bottom: 0px;
-        scale: 1;
-    }
-` */
 export const Drop = keyframes`
     0%   { transform: scale(1,1)      translateY(-100vh); }
     10%  { transform: scale(1.1,.9)   translateY(0vh); }
@@ -215,9 +183,17 @@ export const LogoSplash = keyframes`
 `
 export const CarMovingRight = keyframes`
     from{
-        margin-right: 3000px
+        right: 1500px
     }
     to{
-        margin-right: -2000px;
+        right: -1500px;
+    }
+`
+export const CarMovingLeft = keyframes`
+    from{
+        left: 1500px;
+    }
+    to{
+        left: -1500px;
     }
 `

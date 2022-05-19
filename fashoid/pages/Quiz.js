@@ -3,14 +3,12 @@ import Background from "../comps/background";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import BodyText from "../comps/text-content";
-import Head1 from "../comps/heading";
 import Img from "../comps/image";
 import { topToBottom, fadeIn, QuestionsSlide, SlideLeftDiff, SlideUp, topToBottomDiff } from "../data/animations";
-import HomeIcon from '@mui/icons-material/Home';
-import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 import { useEffect } from "react"
 import "aos/dist/aos.css";
 import Aos from "aos";
+import NavButtons from "../comps/navBtns";
 
 
 const QuesAnimCont = styled.div`
@@ -30,7 +28,10 @@ const OpsButton = styled.button`
     background-image: url("/OuterRing.svg");
     background-repeat: no-repeat;
     background-position: left 24px center;
-
+    transition: 0.3s linear;
+    &:hover{
+        background-color: #707070;
+    }
 `;
 
 const CorrectButton = styled.button`
@@ -63,11 +64,16 @@ const QuizStartBtn = styled.button`
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 40px center;
+    transition: 0.3s linear;
+    &:hover{
+        background-color: #11729c;
+    }
 `;
 
 const TextCont = styled.div`
     padding: 40px 20px 0px 20px;
 `
+
 const LastNext = styled.button`
     border-radius: 8px;
     padding: 10px 40px 10px 40px;
@@ -79,38 +85,29 @@ const LastNext = styled.button`
     background-repeat: no-repeat;
     background-position: right 20px center;
     cursor: pointer;
+    transition: 0.3s linear;
+    &:hover{
+        background-color: #595959;
+    }
 `
+
 const LastNextCont = styled.div`
     display: flex;
     justify-content: center;
     padding-top: 40px;
 `
-const Home = styled(HomeIcon)`
-    color: #333;
-    height: 40px;
-    width: auto;
-    position: relative;
-    cursor: pointer;
-    animation: ${topToBottom} 1s;
-`
-const Back = styled(ArrowBackIosSharpIcon)`
-    position: relative;
-    height: 30px;
-    width: auto;
-    color: #333;
-    cursor: pointer;
-    animation: ${topToBottom} 1s;
-`
+
 const CenterCont = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-left: 50px;
 `
+
 const BtnAnim = styled.div`
     animation: ${topToBottom} 1s;
 `
+
 const DrowningContAnim = styled.div`
     animation: ${SlideUp} 1s;
     display: flex;
@@ -118,22 +115,19 @@ const DrowningContAnim = styled.div`
     width: 100vw;
     height: 100vh;
 `
+
 const NextBtnAnim = styled.div`
     animation: ${topToBottom} 1s;
 `
+
 const SmokeMan = styled.div`
     animation: ${SlideLeftDiff} 1s;
 `
+
 const BuildingFall = styled.div`
     animation: ${topToBottomDiff} 1s;;
 `
-const NavBtns = styled.div`
-    width: 74vw;
-    display: flex;
-    padding: 20px 0px 0px 0px;
-    justify-content: space-between;
-    align-items: center;
-`
+
 const AllCont = styled.div`
     display: flex;
     align-items: center;
@@ -643,18 +637,7 @@ export default function Question1() {
 
     return <AllCont>
         <Background img="/Home_bg.svg" />
-        <NavBtns>
-            <Back
-                onClick={
-                    () => r.back("")
-                }
-            />
-            <Home
-                onClick={
-                    () => r.push("/home")
-                }
-            />
-        </NavBtns>
+        <NavButtons />
         <div data-aos="fade-down">
             <Img img="/Quiz.svg"
                 w="380"

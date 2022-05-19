@@ -23,6 +23,10 @@ const StartBtn = styled.button`
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 24px center;
+  &:hover{
+    background-color: black;
+    transition: 0.5s;
+  }
 `
 
 const MainCont = styled.div`
@@ -38,14 +42,14 @@ const SlideInRightDivCont = styled.div`
   animation-duration: 1s;
   display: flex;
   justify-content: center;
-  width: 510px;
+  width: 100vw;
 `
 const SlideInLeftDivCont = styled.div`
   animation: ${SlideInLeft};
   animation-duration: 1s;
   display: flex;
   justify-content: center;
-  width: 510px;
+  width: 100vw;
 `
 
 export default function Main() {
@@ -84,10 +88,23 @@ export default function Main() {
       />
     </SlideInLeftDivCont>
 
-    <SlideInRightDivCont>
+    {/* <SlideInRightDivCont>
       <StartBtn className="StartBtn" onClick={
         () => r.push("/start")
       }>Click to enter simulation</StartBtn>
+    </SlideInRightDivCont> */}
+
+    <SlideInRightDivCont>
+      <nav>
+        <ul>
+          <li onClick={
+            () => r.push("/start")
+          }>
+            Click here to enter simulation
+            <span></span><span></span><span></span><span></span>
+          </li>
+        </ul>
+      </nav>
     </SlideInRightDivCont>
 
 

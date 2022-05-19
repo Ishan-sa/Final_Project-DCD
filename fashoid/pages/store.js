@@ -3,23 +3,35 @@ import Img from "../comps/image";
 import styled from "styled-components";
 import { useRouter } from 'next/router';
 import { ChangeType } from "../data/data";
-import HomeIcon from '@mui/icons-material/Home';
-import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 import { topToBottom, ScaleIn } from "../data/animations";
 import Aos from "aos";
 import { useEffect } from "react"
 import "aos/dist/aos.css";
-
+import NavButtons from "../comps/navBtns";
 
 const Cabinet = styled.div`
     position: relative;
     top: 20px;
 `;
 
-const Clothing = styled.div`
+const Clothing1 = styled.div`
     position: absolute;
     top: 55px; 
     left: 35px;
+    cursor: pointer;
+`;
+
+const Clothing2 = styled.div`
+    position: absolute;
+    top: 150px; 
+    left: 35px;
+    cursor: pointer;
+`;
+
+const Clothing3 = styled.div`
+    position: absolute;
+    top: 220px; 
+    left: 40px;
     cursor: pointer;
 `;
 
@@ -35,34 +47,13 @@ const Shirts = styled.div`
     cursor: pointer;
 `;
 
-const Home = styled(HomeIcon)`
-    color: #333;
-    height: 40px;
-    width: auto;
-    position: relative;
-    cursor: pointer;
-    animation: ${topToBottom} 1s;
-`
-const Back = styled(ArrowBackIosSharpIcon)`
-    position: relative;
-    height: 30px;
-    width: auto;
-    color: #333;
-    cursor: pointer;
-    animation: ${topToBottom} 1s;
-`
+
 const StoreLady = styled.div`
     animation: ${ScaleIn} 0.5s linear;
+
 `
 const ShirtsCont = styled.div`
     overflow: hidden;
-`
-const NavBtns = styled.div`
-    width: 74vw;
-    display: flex;
-    padding: 20px 0px 0px 0px;
-    justify-content: space-between;
-    align-items: center;
 `
 
 export default function Store() {
@@ -72,22 +63,11 @@ export default function Store() {
     }, []);
 
     return <MainCont>
-        <NavBtns>
-            <Back
-                onClick={
-                    () => r.back("")
-                }
-            />
-            <Home
-                onClick={
-                    () => r.push("/home")
-                }
-            />
-        </NavBtns>
+        <NavButtons />
         <Background img="/Home_bg.svg" />
         <StoreLady
             data-aos="fade-down">
-            <Img img="/storelady.svg" w="300" h="300" />
+            <Img img="/storelady.svg" w="300" h="300" padding="0px 0px 0px 0px" />
         </StoreLady>
         <div data-aos="fade-down">
             <Img img="/lightlines.svg" w="390" h="9" padding="0px 0px 0px 0px" />
@@ -98,15 +78,25 @@ export default function Store() {
             () => ChangeType("jeans")
         }>
             <Img img="/cabinet.svg" w="296" h="464" />
-            <Clothing
+            <Clothing1
                 data-aos="fade-down"
                 onClick={
                     () => r.push("/QtySelect")
                 }>
                 <Img img="/topJeans.svg" w="221" h="37" po="absolute" />
+            </Clothing1>
+            <Clothing2 data-aos="fade-down"
+                onClick={
+                    () => r.push("/QtySelect")
+                }>
                 <Img img="/foldedjeans.svg" w="221" h="37" po="absolute" />
+            </Clothing2>
+            <Clothing3 data-aos="fade-down"
+                onClick={
+                    () => r.push("/QtySelect")
+                }>
                 <Img img="/jeans3.svg" w="213.67" h="179.41" po="absolute" />
-            </Clothing>
+            </Clothing3>
         </Cabinet>
 
         <ShirtsCont

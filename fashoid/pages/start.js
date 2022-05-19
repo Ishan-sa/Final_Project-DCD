@@ -61,7 +61,6 @@ const HomeCont = styled.div`
     flex-direction: column;
 `
 
-
 const CloudsCont = styled.div`
     position: absolute;
     display: flex;
@@ -120,21 +119,19 @@ const CarCont = styled.div`
     padding: 495px 0px 0px 60px;
 `
 const Car1Cont = styled.div`
+    position: absolute;
     width: 126px;
     height: 51px;
-    // animation: ${CarMovingRight} 4s;
+    animation: ${CarMovingRight} 15s;
     animation-iteration-count: infinite;
 `
 const Car2Cont = styled.div`
+    position: absolute;
     width: 183px;
     height: 52px;
-    animation: ${CarMovingLeft} 4s;
+    animation: ${CarMovingLeft} 15s;
     animation-iteration-count: infinite;
 `
-const StripsCont = styled.div`
-
-`
-
 
 export default function Start() {
     const r = useRouter();

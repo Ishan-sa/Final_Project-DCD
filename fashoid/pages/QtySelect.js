@@ -4,13 +4,10 @@ import Background from "../comps/background";
 import BodyText from "../comps/text-content";
 import { useState } from 'react';
 import { ChangeQuantity } from '../data/data'
-import HomeIcon from '@mui/icons-material/Home';
-import { topToBottom } from "../data/animations";
-import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 import { useEffect } from "react"
 import "aos/dist/aos.css";
 import Aos from "aos";
-
+import NavButtons from "../comps/navBtns";
 
 const IncBtn = styled.button`
     width: 50px;
@@ -24,6 +21,10 @@ const IncBtn = styled.button`
     background-image: url("/plus.svg");
     background-repeat: no-repeat;
     background-position: right 16px center;
+    transition: 0.3s;
+    &:hover{
+        scale: 1.2;
+    }
 `
 const DecBtn = styled.button`
     width: 50px;
@@ -37,7 +38,10 @@ const DecBtn = styled.button`
     background-image: url("/minus.svg");
     background-repeat: no-repeat;
     background-position: right 16px center;
-
+    transition: 0.3s linear;
+    &:hover{
+        scale: 1.2;
+    }
 `
 const AllCounter = styled.div`
     display: flex;
@@ -62,34 +66,12 @@ const CountCont = styled.div`
 const NextBtnCont = styled.div`
     display: flex;
     justify-content: center;
+    z-index: 999;
 `
-const Home = styled(HomeIcon)`
-    color: #333;
-    height: 40px;
-    width: auto;
-    position: relative;
-    cursor: pointer;
-    animation: ${topToBottom} 1s;
-`
-const Back = styled(ArrowBackIosSharpIcon)`
-    position: relative;
-    height: 30px;
-    width: auto;
-    color: #333;
-    cursor: pointer;
-    animation: ${topToBottom} 1s;
-`
+
 const MainCont = styled.div`
     width: 100vw;
     padding: 120px 0px 120px 0px;
-`
-
-const NavBtns = styled.div`
-    width: 74vw;
-    display: flex;
-    padding: 20px 0px 0px 0px;
-    justify-content: space-between;
-    align-items: center;
 `
 
 const All_Cont = styled.div`
@@ -111,8 +93,13 @@ const NextBtn = styled.button`
     cursor: pointer;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 24px center;
+    background-position: right 20px center;
     font-family: 'Montserrat', sans-serif;
+    transition: 0.3s linear;
+    &:hover{
+        scale: 0.8;
+        background-color: #819160;
+    }
 `
 
 const Counter = () => {
@@ -143,21 +130,9 @@ export default function QtySelect() {
 
     return <All_Cont>
         <Background img="/Home_bg.svg" />
-        <NavBtns>
-            <Back
-                onClick={
-                    () => r.back("")
-                }
-            />
-            <Home
-                onClick={
-                    () => r.push("/home")
-                }
-            />
-        </NavBtns>
+        <NavButtons />
         <div data-aos="flip-up">
             <BodyText txt="How many would you like to buy? (Upto 4)" fontsize="20px"
-                padding="120px 0px 0px 0px"
             />
         </div>
         <Counter />

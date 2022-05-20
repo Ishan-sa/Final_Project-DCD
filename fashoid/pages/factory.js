@@ -17,6 +17,7 @@ const MainCont = styled.div`
 const Warehouse = styled.img`
     margin-top: 330px;
     width: 200px;
+    position: relative;
     cursor: pointer;
 `;
 
@@ -39,7 +40,7 @@ const NextBtn = styled.button`
   padding-right: 20px;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 150px;
+  margin-top: 80px;
   background-repeat: no-repeat;
   background-position: right 20px center;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23333'/%3E%3C/svg%3E");
@@ -77,6 +78,9 @@ const S4 = styled.div`
     background: #737375;
     width: 100vw;
     height: 25vh;
+`
+const BuildingCont = styled.div`
+    position: relative;
 `
 
 export default function Factory() {
@@ -195,6 +199,7 @@ export default function Factory() {
     return <MainCont>
         <SkyRoadCont>
             <S1></S1>
+
             <S2></S2>
             <S3></S3>
             <S4></S4>
@@ -202,16 +207,19 @@ export default function Factory() {
         <SubCont data-aos="flip-down" data-aos-duration="1000">
             <BodyText txt="Keep Clicking on the building to make your product."></BodyText>
         </SubCont>
-        <Warehouse
-            data-aos="fade-down"
-            data-aos-duration="1000"
-            src="/Factory.svg" onClick={
-                () => r.replace({
-                    pathname: "/factory",
-                    query: {
-                        page: page === undefined ? 1 : Number(page) + 1,
-                    }
-                })
-            } />
+        <BuildingCont>
+            <Warehouse
+                data-aos="fade-down"
+                data-aos-duration="1000"
+                src="/Factory.svg" onClick={
+                    () => r.replace({
+                        pathname: "/factory",
+                        query: {
+                            page: page === undefined ? 1 : Number(page) + 1,
+                        }
+                    })
+                } />
+        </BuildingCont>
+
     </MainCont>
 }

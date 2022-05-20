@@ -45,21 +45,21 @@ export const BtnClick = keyframes`
 `
 export const SlideInRight = keyframes`
     from {
-        margin-right: 1000px;
+        right: 1000px;
         opacity: 0;
     }
     to{
-        margin-right: 0px;
+        right: 0px;
         opacity: 1;
     }
 `
 export const SlideInLeft = keyframes`
     from {
-        margin-left: 1000px;
+        left: 1000px;
         opacity: 0;
     }
     to{
-        margin-right: 0px;
+        left: 0px;
         opacity: 1;
     }
 `

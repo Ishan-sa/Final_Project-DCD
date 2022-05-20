@@ -4,6 +4,9 @@ import Img from "../comps/image";
 import BodyText from "../comps/text-content";
 import Background from "../comps/background";
 import { useRouter } from 'next/router';
+import Aos from "aos";
+import { useEffect } from "react"
+import "aos/dist/aos.css";
 import { topToBottom, fadeIn, SlideInRight, SlideInLeft } from "../data/animations";
 
 
@@ -38,14 +41,16 @@ const MainCont = styled.div`
 `
 
 const SlideInRightDivCont = styled.div`
-  animation: ${SlideInRight};
+  // animation: ${SlideInRight};
+  position: relative;
   animation-duration: 1s;
   display: flex;
   justify-content: center;
   width: 100vw;
 `
 const SlideInLeftDivCont = styled.div`
-  animation: ${SlideInLeft};
+  // animation: ${SlideInLeft};
+  position: relative;
   animation-duration: 1s;
   display: flex;
   justify-content: center;
@@ -55,13 +60,16 @@ const SlideInLeftDivCont = styled.div`
 export default function Main() {
 
   const r = useRouter();
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
 
   return <MainCont>
     <Background img="/Home_bg.svg" />
-    <SlideInRightDivCont>
+    <SlideInRightDivCont data-aos="slide-right">
       <Head1 txt="What is Fashoid?" />
     </SlideInRightDivCont>
-    <SlideInLeftDivCont>
+    <SlideInLeftDivCont data-aos="slide-left">
       <Img
         img="/GirlThinking.svg"
         w="65"
@@ -69,17 +77,17 @@ export default function Main() {
         padding="10px 0px 0px 0px"
       />
     </SlideInLeftDivCont>
-    <SlideInRightDivCont>
+    <SlideInRightDivCont data-aos="slide-right">
       <BodyText margin="0px 50px 0px 50px" padding="30px 20px 15px 20px" txt={<>
         <b>Fashoid</b> is a web app that has the goal of letting its users know how much resources it takes to make a set of clothing such as Jeans and a T-shirt. It also teaches its users the downsides of <b>fast fashion</b> and<br /> <b>over-consumption</b>.
       </>} />
     </SlideInRightDivCont>
 
-    <SlideInRightDivCont>
+    <SlideInRightDivCont data-aos="slide-right">
       <BodyText margin="0px 50px 0px 30px" padding="30px 30px 20px 50px" txt="The app will take you through the production process that is common for most fast fashion brands." />
     </SlideInRightDivCont>
 
-    <SlideInLeftDivCont>
+    <SlideInLeftDivCont data-aos="slide-left">
       <Img
         img="/startdiagram.svg"
         w="320.11"

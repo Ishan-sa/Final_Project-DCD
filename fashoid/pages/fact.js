@@ -32,8 +32,7 @@ const Water2Jeans = styled.div`
   align-items: center;
   justify-content: space-around;
   width: 100vw;
-  padding-top: 150px;
-  margin-top: 80px;
+  margin-top: 20px;
 `
 
 const StartBtn = styled.button`
@@ -303,16 +302,15 @@ export default function WwFact() {
       <Background img="/Home_bg.svg" />
       <NavButtons />
       <div data-aos="zoom-out">
-        <Img img="/bruhgirl.svg" w="250" h="250" p="50px 0px 50px 0px" />
+        <Img img="/bruhgirl.svg" w="250" h="250" padding="0px 0px 0px 0px" />
       </div>
-      <H2 data-aos="slide-right"> What!? <br /> You want {gq} pairs?</H2>
-      <div data-aos="slide-left">
+      <H2 data-aos="fade"> What!? <br /> You want {gq} pairs?</H2>
+      <div data-aos="fade">
         <BodyText txt="We only have 4 in stock" />
       </div>
 
-
       <StartBtn
-        data-aos="slide-right"
+        data-aos="fade-down"
         onClick={
           () => r.push("/QtySelect")
         }>Try Again</StartBtn>
@@ -508,15 +506,15 @@ export default function WwFact() {
       <NavButtons />
       <Background img="/Home_bg.svg" />
       <Water2Jeans data-aos="zoom-out">
-        <Img img="/bruhgirl.svg" w="250" h="250" />
+        <Img img="/bruhgirl.svg" w="250" h="250" padding="0px 0px 0px 0px" />
       </Water2Jeans>
-      <h2 data-aos="slide-left"> What!? You want {gq} shirts?</h2>
-      <div data-aos="slide-right">
+      <h2 data-aos="fade"> What!? You want {gq} shirts?</h2>
+      <div data-aos="fade">
         <BodyText txt="We only have 4 in stock" />
       </div>
 
 
-      <div data-aos="slide-left">
+      <div data-aos="fade-down">
         <StartBtn
           onClick={
             () => r.push("/QtySelect")

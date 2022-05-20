@@ -190,7 +190,7 @@ export default function Question1() {
 
 
             <div data-aos="fade-up">
-                <Img img="/Person + Bubble.svg"
+                <Img img="/Person+Bubble.svg"
                     w="250"
                     h="250" />
             </div>
@@ -341,7 +341,7 @@ export default function Question1() {
                 }>Next Question{q3}</QuizStartBtn>
             </div>
             <div data-aos="fade-up">
-                <Img img="/Person + Bubble.svg"
+                <Img img="/Person+Bubble.svg"
                     w="250"
                     h="250" />
             </div>
@@ -487,7 +487,7 @@ export default function Question1() {
                 }>Next Question{q2}</QuizStartBtn>
             </div>
             <div data-aos="fade-up">
-                <Img img="/Person + Bubble.svg"
+                <Img img="/Person+Bubble.svg"
                     w="250"
                     h="250" />
             </div>

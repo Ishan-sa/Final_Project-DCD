@@ -221,19 +221,17 @@ export default function Factory() {
         <SubCont data-aos="flip-down" data-aos-duration="1000">
             <BodyText txt="Keep Clicking on the building to make your product."></BodyText>
         </SubCont>
-        <BuildingCont>
-            <Warehouse
-                data-aos="fade-down"
-                data-aos-duration="1000"
-                src="/Factory.svg" onClick={
-                    () => r.replace({
-                        pathname: "/factory",
-                        query: {
-                            page: page === undefined ? 1 : Number(page) + 1,
-                        }
-                    })
-                } />
-        </BuildingCont>
+        <Warehouse
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            src="/Factory.svg" onClick={
+                () => r.replace({
+                    pathname: "/factory",
+                    query: {
+                        page: page === undefined ? 1 : Number(page) + 1,
+                    }
+                })
+            } />
 
 
     </MainCont>

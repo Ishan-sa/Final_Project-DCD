@@ -45,11 +45,11 @@ nav ul li {
   /* --c: goldenrod; */
   --c: #96A96F;
   color: var(--c);
-  font-size: 16px;
-  border: 0.2em solid var(--c);
+  font-size: 14px;
+  border: 0.25em solid var(--c);
   border-radius: 0.5em;
   width: 24em;
-  height: 3.5em;
+  height: 3.em;
   text-transform: uppercase;
   font-weight: bold;
   font-family: sans-serif;

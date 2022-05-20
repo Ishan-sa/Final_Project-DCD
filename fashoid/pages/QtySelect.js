@@ -65,6 +65,8 @@ const CountCont = styled.div`
 `
 const NextBtnCont = styled.div`
     display: flex;
+    position: relative;
+    bottom: 120px;
     justify-content: center;
     z-index: 999;
 `
@@ -84,7 +86,7 @@ const All_Cont = styled.div`
 const NextBtn = styled.button`
     width: 117px;
     height: 40px;
-    margin-bottom: 30px;
+    position: realtive;
     border: 0;
     border-radius: 8px;
     background-color: #96A96F;

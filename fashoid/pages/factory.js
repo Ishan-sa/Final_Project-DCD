@@ -5,6 +5,7 @@ import { topToBottom } from "../data/animations";
 import { useEffect } from "react"
 import "aos/dist/aos.css";
 import Aos from "aos";
+import Img from "../comps/image";
 
 const MainCont = styled.div`
     display: flex;
@@ -53,34 +54,40 @@ const NextBtn = styled.button`
 const SubCont = styled.div`
     padding-top: 40px;
 `
+const S1 = styled.div`
+background: linear-gradient(#59bfff, #c4e9ff);
+width: 100vw;
+height: 60vh;
+`
+const S2 = styled.div`
+background: #D9D9D9;
+width: 100vw;
+height: 10vh;
+`
+const S3 = styled.div`
+background: #B2B2B2;
+width: 100vw;
+height: 5vh;
+`
+const S4 = styled.div`
+background: #737375;
+width: 100vw;
+height: 25vh;
+`
+const BuildingCont = styled.div`
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 450px;
+    width: 100vw;
+`
 const SkyRoadCont = styled.div`
     display: flex;
     flex-direction: column;
     width: 100vw;
+    height: 100vh;
     position: absolute;
-`
-const S1 = styled.div`
-    background: linear-gradient(#59bfff, #c4e9ff);
-    width: 100vw;
-    height: 60vh;
-`
-const S2 = styled.div`
-    background: #D9D9D9;
-    width: 100vw;
-    height: 10vh;
-`
-const S3 = styled.div`
-    background: #B2B2B2;
-    width: 100vw;
-    height: 5vh;
-`
-const S4 = styled.div`
-    background: #737375;
-    width: 100vw;
-    height: 25vh;
-`
-const BuildingCont = styled.div`
-    position: relative;
 `
 
 export default function Factory() {
@@ -199,7 +206,14 @@ export default function Factory() {
     return <MainCont>
         <SkyRoadCont>
             <S1></S1>
-
+            {/* <BuildingCont>
+                <Img
+                    img="/Factory.svg"
+                    padding="0px 0px 0px 0px"
+                    w="180"
+                    h="193"
+                />
+            </BuildingCont> */}
             <S2></S2>
             <S3></S3>
             <S4></S4>
@@ -220,6 +234,7 @@ export default function Factory() {
                     })
                 } />
         </BuildingCont>
+
 
     </MainCont>
 }

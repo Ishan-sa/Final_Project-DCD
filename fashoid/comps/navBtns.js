@@ -36,6 +36,7 @@ const NavBtns = styled.div`
     padding: 20px 0px 80px 0px;
     justify-content: space-between;
     align-items: center;
+    z-index: 999;
 `
 
 export default function NavButtons() {
